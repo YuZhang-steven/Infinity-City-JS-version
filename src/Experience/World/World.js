@@ -20,7 +20,7 @@ export default class World {
             this.city = new City()
             this.environment = new Environment()
 
-            console.log(this.colorWheel)
+
 
         })
     }

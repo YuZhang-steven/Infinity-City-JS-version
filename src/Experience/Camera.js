@@ -10,6 +10,10 @@ export default class Camera {
         this.canvas = this.experience.canvas
         this.debug = this.experience.debug
 
+        //infinity effect setting
+        this.jumpConst = 4
+        this.mergeConst = 2
+
         // Debug
         if (this.debug.active) {
             this.debugFolder = this.debug.ui.addFolder('camera')
@@ -53,12 +57,41 @@ export default class Camera {
         }
     }
 
+    //infinity effect jump back
+    boundaryCheck() {
+        /*check the control target, 
+        if the x or z coordinator is out of the boundary setting(mergeConst)
+        the camara location and target location jump back to another side
+        the jump distace is defined by jumpconst
+        */
+        if (this.controls.target.x > this.mergeConst) {
+            this.controls.target.x -= this.jumpConst
+            this.instance.position.x -= this.jumpConst
+        }
+        if (this.controls.target.x < -this.mergeConst) {
+            this.controls.target.x += this.jumpConst
+            this.instance.position.x += this.jumpConst
+        }
+        if (this.controls.target.z > this.mergeConst) {
+            this.controls.target.z -= this.jumpConst
+            this.instance.position.z -= this.jumpConst
+        }
+        if (this.controls.target.z < -this.mergeConst) {
+            this.controls.target.z += this.jumpConst
+            this.instance.position.z += this.jumpConst
+        }
+
+    }
+
     resize() {
         this.instance.aspect = this.sizes.width / this.sizes.height
         this.instance.updateProjectionMatrix()
     }
 
     update() {
+        //do boundarycheck every update to achive infinity effect
+        this.boundaryCheck()
+
         this.controls.update()
     }
 }
