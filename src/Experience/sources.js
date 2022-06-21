@@ -42,4 +42,10 @@ export default [
         type: 'texture',
         path: 'models/city/Majormaterial.jpg'
     },
+    {
+        name: 'colorWheel',
+        type: 'gltfModel',
+        path: 'models/colorWheel/ColorWheel.glb'
+    },
+
 ]
