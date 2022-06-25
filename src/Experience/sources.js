@@ -35,17 +35,32 @@ export default [
     {
         name: 'ExportTest',
         type: 'gltfModel',
-        path: 'models/city/ExportTest.glb'
+        path: 'models/city/city_test04_export test_part01.glb'
     },
     {
         name: 'cityTexture',
         type: 'texture',
-        path: 'models/city/Majormaterial.jpg'
+        path: 'models/city/Material01.jpg'
+    },
+    {
+        name: 'Land01',
+        type: 'gltfModel',
+        path: 'models/city/city_test04_export test_part02.glb'
+    },
+    {
+        name: 'landTexture',
+        type: 'texture',
+        path: 'models/city/Material02.jpg'
     },
     {
         name: 'colorWheel',
         type: 'gltfModel',
         path: 'models/colorWheel/ColorWheel.glb'
+    },
+    {
+        name: 'clothSimulation',
+        type: 'gltfModel',
+        path: 'models/cloth/cloth_test01.glb'
     },
 
 ]

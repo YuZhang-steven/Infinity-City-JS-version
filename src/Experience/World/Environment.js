@@ -85,11 +85,11 @@ export default class Environment {
         //this.environmentMap.texture.encoding = THREE.sRGBEncoding
 
         this.scene.environment = this.environmentMap.texture
-        this.scene.background = this.environmentMap.texture
+        //this.scene.background = this.environmentMap.texture
 
         this.environmentMap.updateMaterials = () => {
             this.scene.traverse((child) => {
-                if (child instanceof THREE.Mesh && child.material instanceof THREE.MeshPhongMaterial) {
+                if (child instanceof THREE.Mesh && child.material instanceof THREE.MeshBasicMaterial) {
                     child.material.envMap = this.environmentMap.texture
                     child.material.envMapIntensity = this.environmentMap.intensity
                     child.material.needsUpdate = true

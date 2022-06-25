@@ -9,6 +9,11 @@ export default class City {
         this.resources = this.experience.resources
 
         this.resource = this.resources.items.ExportTest
+        this.landModel = this.resources.items.Land01
+
+        this.landMaterial = this.resources.items.landTexture
+        this.landMaterial.flipY = false
+        this.landMaterial.encoding = THREE.sRGBEncoding
 
         this.material = this.resources.items.cityTexture
         this.material.flipY = false
@@ -19,24 +24,37 @@ export default class City {
 
     setModel() {
         this.model = this.resource.scene
+        this.land = this.landModel.scene
         //console.log(this.model)
 
         //load material
-        const bakedMaterial = new THREE.MeshBasicMaterial({
+        const bakedMaterial01 = new THREE.MeshBasicMaterial({
 
-            reflectivity: 0.1,
-
+            reflectivity: 0.01,
             map: this.material
+        })
+
+        const bakedMaterial02 = new THREE.MeshBasicMaterial({
+            reflectivity: 0.01,
+            map: this.landMaterial
         })
 
         this.model.traverse((child) => {
             if (child instanceof THREE.Mesh) {
                 child.nor
-                child.material = bakedMaterial
+                child.material = bakedMaterial01
             }
 
         })
 
-        this.scene.add(this.model)
+        this.land.traverse((child) => {
+            if (child instanceof THREE.Mesh) {
+                child.nor
+                child.material = bakedMaterial02
+            }
+
+        })
+
+        this.scene.add(this.model, this.land)
     }
 }

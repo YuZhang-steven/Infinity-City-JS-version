@@ -35,8 +35,8 @@ export default class Camera {
         this.controls.enableDamping = true
         this.controls.screenSpacePanning = false
         this.controls.maxPolarAngle = Math.PI / 2
-        this.controls.maxAzimuthAngle = 1.2 * Math.PI
-        this.controls.minAzimuthAngle = Math.PI
+        //this.controls.maxAzimuthAngle = 1.2 * Math.PI
+        //this.controls.minAzimuthAngle = Math.PI
         //this.controls.target = new THREE.Vector3(2, 1, 1)
 
         //Debug
@@ -90,7 +90,7 @@ export default class Camera {
 
     update() {
         //do boundarycheck every update to achive infinity effect
-        this.boundaryCheck()
+        //this.boundaryCheck()
 
         this.controls.update()
     }

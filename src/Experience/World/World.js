@@ -1,5 +1,6 @@
 import Experience from '../Experience.js'
 import City from './City.js'
+import clothSimulation from './ClothSimulation.js'
 import ColorWheel from './colorWheel.js'
 import Environment from './Environment.js'
 import Floor from './Floor.js'
@@ -15,8 +16,9 @@ export default class World {
         this.resources.on('ready', () => {
             // Setup
             //this.floor = new Floor()
+            this.clothSimulation = new clothSimulation()
             this.colorWheel = new ColorWheel()
-            this.fox = new Fox()
+            //this.fox = new Fox()
             this.city = new City()
             this.environment = new Environment()
 
@@ -30,5 +32,7 @@ export default class World {
             this.fox.update()
         if (this.colorWheel)
             this.colorWheel.update()
+        if (this.clothSimulation)
+            this.clothSimulation.update()
     }
 }
