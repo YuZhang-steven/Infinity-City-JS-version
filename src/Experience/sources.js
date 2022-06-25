@@ -33,6 +33,11 @@ export default [
         path: 'textures/hdrmap/small_hangar_01_1k.hdr'
     },
     {
+        name: 'water01',
+        type: 'gltfModel',
+        path: 'models/city/city test04_export_water.glb'
+    },
+    {
         name: 'ExportTest',
         type: 'gltfModel',
         path: 'models/city/city_test04_export test_part01.glb'

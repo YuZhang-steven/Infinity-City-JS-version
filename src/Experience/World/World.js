@@ -16,8 +16,8 @@ export default class World {
         this.resources.on('ready', () => {
             // Setup
             //this.floor = new Floor()
-            this.clothSimulation = new clothSimulation()
-            this.colorWheel = new ColorWheel()
+            //this.clothSimulation = new clothSimulation()
+            //this.colorWheel = new ColorWheel()
             //this.fox = new Fox()
             this.city = new City()
             this.environment = new Environment()
