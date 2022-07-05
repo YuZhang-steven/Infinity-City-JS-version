@@ -66,6 +66,14 @@ export default [
         name: 'clothSimulation',
         type: 'gltfModel',
         path: 'models/cloth/cloth_test01.glb'
-    },
+    }, {
+        name: 'cityPart2',
+        type: 'gltfModel',
+        path: 'models/city/cityPart02.glb'
+    }, {
+        name: 'water02',
+        type: 'gltfModel',
+        path: 'models/city/water02.glb'
+    }
 
 ]

@@ -37,7 +37,7 @@ export default class ColorWheel {
         })
 
 
-        //event manager monitor array:chech if the object already in a event situation
+        //event manager monitor array:check if the object already in a event situation
         let objectsHover = [];
 
         this.model.traverse((child) => {
@@ -58,17 +58,16 @@ export default class ColorWheel {
             child.addEventListener('mouseout', (event) => {
                 if (objectsHover.includes(event.target)) {
                     event.target.material.color.set(0x00ffff)
-                    objectsHover.pop(event.target)
+                    objectsHover.pop()
                 }
             })
 
 
 
-            //child.material.flatShading = false
+
         })
 
         this.scene.add(this.model)
-        //console.log(this.model)
     }
 
     //loading Animation in model

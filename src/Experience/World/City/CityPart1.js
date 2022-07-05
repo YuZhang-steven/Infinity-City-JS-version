@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 
-import Experience from "../Experience";
-export default class City {
+import Experience from "../../Experience";
+export default class CityPart1 {
     constructor() {
         //Setup
         this.experience = new Experience()
@@ -41,9 +41,9 @@ export default class City {
         })
         const waterMaterial = new THREE.MeshBasicMaterial({
             transparent: true,
-            opacity: 0.7,
+            opacity: 0.8,
             color: 0x71cdff,
-            reflectivity: 0.7,
+            reflectivity: 0.5,
 
         })
 
