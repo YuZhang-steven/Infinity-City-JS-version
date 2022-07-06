@@ -1,6 +1,8 @@
 import Experience from '../Experience.js'
 import CityPart1 from './City/CityPart1.js'
 import CityPart2 from './City/CityPart2.js'
+import CityPart3 from './City/CityPart3.js'
+import CityPart4 from './City/CityPart4.js'
 import clothSimulation from './ClothSimulation.js'
 import ColorWheel from './colorWheel.js'
 import Environment from './Environment.js'
@@ -23,6 +25,8 @@ export default class World {
 
             this.city1 = new CityPart1()
             this.city2 = new CityPart2()
+            this.city3 = new CityPart3()
+            this.city4 = new CityPart4()
 
 
 

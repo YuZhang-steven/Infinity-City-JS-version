@@ -33,31 +33,6 @@ export default [
         path: 'textures/hdrmap/small_hangar_01_1k.hdr'
     },
     {
-        name: 'water01',
-        type: 'gltfModel',
-        path: 'models/city/city test04_export_water.glb'
-    },
-    {
-        name: 'ExportTest',
-        type: 'gltfModel',
-        path: 'models/city/city_test04_export test_part01.glb'
-    },
-    {
-        name: 'cityTexture',
-        type: 'texture',
-        path: 'models/city/Material01.jpg'
-    },
-    {
-        name: 'Land01',
-        type: 'gltfModel',
-        path: 'models/city/city_test04_export test_part02.glb'
-    },
-    {
-        name: 'landTexture',
-        type: 'texture',
-        path: 'models/city/Material02.jpg'
-    },
-    {
         name: 'colorWheel',
         type: 'gltfModel',
         path: 'models/colorWheel/ColorWheel.glb'
@@ -66,14 +41,37 @@ export default [
         name: 'clothSimulation',
         type: 'gltfModel',
         path: 'models/cloth/cloth_test01.glb'
-    }, {
+    },
+    {
+        name: 'cityPart1',
+        type: 'gltfModel',
+        path: 'models/city/cityPart01.glb'
+    },
+    {
+        name: 'cityTexture1',
+        type: 'texture',
+        path: 'models/city/cityTexture01.jpg'
+    },
+    {
+        name: 'roadTexture1',
+        type: 'texture',
+        path: 'models/city/roadTexture01.jpg'
+    },
+    {
         name: 'cityPart2',
         type: 'gltfModel',
         path: 'models/city/cityPart02.glb'
-    }, {
-        name: 'water02',
+    },
+    {
+        name: 'cityPart3',
         type: 'gltfModel',
-        path: 'models/city/water02.glb'
-    }
+        path: 'models/city/cityPart03.glb'
+    },
+    {
+        name: 'cityPart4',
+        type: 'gltfModel',
+        path: 'models/city/cityPart04.glb'
+    },
+
 
 ]

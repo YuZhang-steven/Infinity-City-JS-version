@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import Experience from "../../Experience";
 import LocationCalculation from '../../Utils/LocationCalculation';
 
-export default class CityPart2 {
+export default class CityPart3 {
     constructor() {
         /* 
         Setup
@@ -20,14 +20,14 @@ export default class CityPart2 {
         this.center = new THREE.Vector3()
 
         //model file location
-        this.cityModel = this.resources.items.cityPart2
+        this.cityModel = this.resources.items.cityPart3
 
         // //texture file location
-        // this.roadTexture = this.resources.items.roadTexture2
+        // this.roadTexture = this.resources.items.roadTexture3
         // this.roadTexture.flipY = false
         // this.roadTexture.encoding = THREE.sRGBEncoding
 
-        // this.cityTexture = this.resources.items.cityTexture2
+        // this.cityTexture = this.resources.items.cityTexture3
         // this.cityTexture.flipY = false
         // this.cityTexture.encoding = THREE.sRGBEncoding
 
@@ -42,14 +42,14 @@ export default class CityPart2 {
         this.model = this.cityModel.scene
 
         //calculater the model center.
-        let roadGeometry = this.model.getObjectByName('road02').geometry
+        let roadGeometry = this.model.getObjectByName('road03').geometry
         this.center.addVectors(roadGeometry.boundingBox.min, roadGeometry.boundingBox.max)
         this.center.multiplyScalar(0.5)
 
         //load material
         const cityMaterial = new THREE.MeshBasicMaterial({
             reflectivity: 0.01,
-            color: 0xFF0000,
+            color: 0x00FF00,
             //map: this.cityTexture
         })
 
