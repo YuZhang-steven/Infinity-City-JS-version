@@ -27,7 +27,7 @@ export default class CityPart1 {
         this.model = this.resource.scene
         this.land = this.landModel.scene
         this.water = this.waterModel.scene
-        //console.log(this.model)
+        console.log(this.land)
 
         //load material
         const bakedMaterial01 = new THREE.MeshBasicMaterial({
@@ -49,6 +49,7 @@ export default class CityPart1 {
 
         this.model.traverse((child) => {
             if (child instanceof THREE.Mesh) {
+                //console.log(child)
                 child.material = bakedMaterial01
             }
 
@@ -56,6 +57,7 @@ export default class CityPart1 {
 
         this.land.traverse((child) => {
             if (child instanceof THREE.Mesh) {
+                //console.log(child)
                 child.material = bakedMaterial02
             }
 
