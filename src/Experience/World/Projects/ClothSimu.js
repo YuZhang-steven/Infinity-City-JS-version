@@ -2,6 +2,7 @@ import * as THREE from 'three'
 
 import Experience from '../../Experience'
 import LocationCalculation from '../../Utils/LocationCalculation'
+import LocationCalculationPJ from '../../Utils/LocationCalculationPJ'
 
 
 export default class ClothSimu {
@@ -10,7 +11,7 @@ export default class ClothSimu {
         this.experience = new Experience()
         this.scene = this.experience.scene
         this.resources = this.experience.resources
-        this.locCal = new LocationCalculation()
+        this.locCal = new LocationCalculationPJ()
         this.time = this.experience.time
         this.interactionManager = this.experience.interactive.instance
         this.matAssign = this.experience.matAssign
@@ -29,6 +30,7 @@ export default class ClothSimu {
         this.setAnimation()
     }
 
+
     /*
     Model setting function
     */
@@ -38,11 +40,35 @@ export default class ClothSimu {
 
 
         const material = this.matAssign.getMaterial(this.projectType)
-        console.log(material)
+        //console.log(material)
+
+        //Array to save alll instances model
+        this.instances = [];
 
         this.model.traverse((child) => {
-            //add Material
-            child.material = material
+            if (child instanceof THREE.Mesh) {
+                //add Material
+                child.material = material
+                this.modelInstance = new THREE.InstancedMesh(child.geometry, material, this.num_instances)
+
+                //add instance to the scene
+                this.scene.add(this.modelInstance)
+
+                console.log(child)
+
+                //calculate tranlation matrix
+                let matricesArray = this.locCal.cal3Matrix(child.position)
+
+                //add matrix to each instance
+                for (let i = 0; i < this.num_instances; i++) {
+                    this.modelInstance.setMatrixAt(i, matricesArray[i])
+                }
+
+                //marked change and add the instance model to the array
+                this.modelInstance.instanceMatrix.needsUpdate = true;
+                this.instances.push(this.modelInstance)
+            }
+
         })
         this.scene.add(this.model)
 
