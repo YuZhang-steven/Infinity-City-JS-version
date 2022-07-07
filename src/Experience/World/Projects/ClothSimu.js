@@ -17,6 +17,7 @@ export default class ClothSimu {
         this.matAssign = this.experience.matAssign
         this.projectType = "computer_graphic"
 
+
         //instance copy information
         this.num_instances = 3
         this.center = new THREE.Vector3()
@@ -74,6 +75,18 @@ export default class ClothSimu {
 
     }
     setAnimation() {
+        this.animation = {}
 
+        // this.animation.mixer01 = new THREE.AnimationMixer(this.modelInstance)
+        // this.animation.action01 = this.animation.mixer01.clipAction(this.projectModel.animations[0])
+        // this.animation.action01.play()
+
+        this.animation.mixer02 = new THREE.AnimationMixer(this.model)
+        this.animation.action02 = this.animation.mixer02.clipAction(this.projectModel.animations[0])
+        this.animation.action02.play()
+    }
+    update() {
+        // this.animation.mixer01.update(this.time.delta * 0.0001)
+        this.animation.mixer02.update(this.time.delta * 0.0001)
     }
 }
