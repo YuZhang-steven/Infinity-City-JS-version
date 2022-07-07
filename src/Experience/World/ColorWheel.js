@@ -12,16 +12,19 @@ export default class ColorWheel {
 
 
         this.resource = this.resources.items.colorWheel
-
+        //console.log(this.resource)
         this.setModel()
         this.setAnimation()
+
 
     }
 
     //model initiate
     setModel() {
         //load model address
+
         this.model = this.resource.scene
+        //console.log(this.model)
 
         //add event control
         this.model.addEvent
@@ -51,7 +54,7 @@ export default class ColorWheel {
 
             child.addEventListener('mouseover', (event) => {
                 if (!objectsHover.includes(event.target)) {
-                    event.target.material.color.set(0x0000ff)
+                    event.target.material.color.set(0xffffff)
                     objectsHover.push(event.target)
                 }
             })
@@ -72,6 +75,7 @@ export default class ColorWheel {
 
     //loading Animation in model
     setAnimation() {
+
         this.animation = {}
         this.animation.mixer = new THREE.AnimationMixer(this.model)
         this.animation.action = this.animation.mixer.clipAction(this.resource.animations[0])

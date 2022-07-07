@@ -8,6 +8,7 @@ import ColorWheel from './colorWheel.js'
 import Environment from './Environment.js'
 import Floor from './Floor.js'
 import Fox from './Fox.js'
+import ClothSimu from './Projects/ClothSimu.js'
 
 export default class World {
     constructor() {
@@ -20,13 +21,15 @@ export default class World {
             // Setup
             //this.floor = new Floor()
             //this.clothSimulation = new clothSimulation()
-            //this.colorWheel = new ColorWheel()
+            this.colorWheel = new ColorWheel()
             //this.fox = new Fox()
 
             this.city1 = new CityPart1()
             this.city2 = new CityPart2()
             this.city3 = new CityPart3()
             this.city4 = new CityPart4()
+
+            this.clothsimu = new ClothSimu()
 
 
 

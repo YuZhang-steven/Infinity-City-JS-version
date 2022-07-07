@@ -94,6 +94,11 @@ export default class Environment {
                     child.material.envMapIntensity = this.environmentMap.intensity
                     child.material.needsUpdate = true
                 }
+                else if (child instanceof THREE.Mesh && child.material instanceof THREE.MeshPhongMaterial) {
+                    child.material.envMap = this.environmentMap.texture
+                    child.material.envMapIntensity = this.environmentMap.intensity
+                    child.material.needsUpdate = true
+                }
             })
         }
         this.environmentMap.updateMaterials()

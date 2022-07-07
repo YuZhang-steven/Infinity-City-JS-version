@@ -10,6 +10,7 @@ import Renderer from './Renderer.js'
 import World from './World/World.js'
 import Resources from './Utils/Resources.js'
 import Interactive from './Utils/Interactive.js'
+import ProjectMatAssign from './Utils/ProjectMatAssign.js'
 
 
 
@@ -41,6 +42,7 @@ export default class Experience {
         this.camera = new Camera()
         this.renderer = new Renderer()
         this.interactive = new Interactive()
+        this.matAssign = new ProjectMatAssign()
 
 
         this.world = new World()

@@ -72,6 +72,11 @@ export default [
         type: 'gltfModel',
         path: 'models/city/cityPart04.glb'
     },
+    {
+        name: 'clothSimu',
+        type: 'gltfModel',
+        path: 'models/Projects/clothSimulation.glb'
+    },
 
 
 ]
