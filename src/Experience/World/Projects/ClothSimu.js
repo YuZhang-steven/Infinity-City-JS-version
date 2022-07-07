@@ -46,6 +46,9 @@ export default class ClothSimu {
         //Array to save alll instances model
         this.instances = [];
 
+        //event manager monitor array:check if the object already in a event situation
+        let objectsHover = [];
+
         this.model.traverse((child) => {
             if (child instanceof THREE.Mesh) {
                 //add Material
@@ -68,6 +71,38 @@ export default class ClothSimu {
                 //marked change and add the instance model to the array
                 this.modelInstance.instanceMatrix.needsUpdate = true;
                 this.instances.push(this.modelInstance)
+
+                //add Event Listener to major model
+                this.interactionManager.add(child)
+
+                child.addEventListener('mouseover', (event) => {
+                    if (!objectsHover.includes(event.target)) {
+                        event.target.material.color.set(0xffffff)
+                        objectsHover.push(event.target)
+                    }
+                })
+                child.addEventListener('mouseout', (event) => {
+                    if (objectsHover.includes(event.target)) {
+                        event.target.material.color.set(0x00ffff)
+                        objectsHover.pop()
+                    }
+                })
+
+                //add Event Listener to instance model
+                this.interactionManager.add(this.modelInstance)
+
+                this.modelInstance.addEventListener('mouseover', (event) => {
+                    if (!objectsHover.includes(event.target)) {
+                        event.target.material.color.set(0xffffff)
+                        objectsHover.push(event.target)
+                    }
+                })
+                this.modelInstance.addEventListener('mouseout', (event) => {
+                    if (objectsHover.includes(event.target)) {
+                        event.target.material.color.set(0x00ffff)
+                        objectsHover.pop()
+                    }
+                })
             }
 
         })
