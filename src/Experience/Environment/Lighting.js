@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import Experience from '../Experience.js'
 
-export default class Environment {
+export default class Lighting {
     constructor() {
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -10,7 +10,7 @@ export default class Environment {
 
         // Debug
         if (this.debug.active) {
-            this.debugFolder = this.debug.ui.addFolder('environment')
+            this.debugFolder = this.debug.ui.addFolder('Lighting')
         }
         this.setAmbientLight()
         this.setSunLight()

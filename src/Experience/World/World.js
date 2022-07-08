@@ -4,10 +4,11 @@ import CityPart2 from './City/CityPart2.js'
 import CityPart3 from './City/CityPart3.js'
 import CityPart4 from './City/CityPart4.js'
 import ColorWheel from './colorWheel.js'
-import Environment from './Environment.js'
+import Lighting from '../Environment/Lighting.js'
 
 import Fox from './Fox.js'
 import ClothSimulation from './Projects/ClothSimulation.js'
+import Fog from '../Environment/Fog.js'
 
 
 export default class World {
@@ -31,7 +32,8 @@ export default class World {
             this.clothsimulation = new ClothSimulation()
 
 
-            this.environment = new Environment()
+            this.lighting = new Lighting()
+            this.fog = new Fog()
 
 
 
