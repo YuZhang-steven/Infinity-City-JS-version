@@ -77,6 +77,11 @@ export default [
         type: 'gltfModel',
         path: 'models/Projects/clothSimulation.glb'
     },
+    {
+        name: 'meshEditor',
+        type: 'gltfModel',
+        path: 'models/Projects/meshEditor.glb'
+    },
 
 
 ]
