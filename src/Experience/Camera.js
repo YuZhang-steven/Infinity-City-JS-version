@@ -11,8 +11,8 @@ export default class Camera {
         this.debug = this.experience.debug
 
         //infinity effect setting
-        this.jumpConst = 4
-        this.mergeConst = 2
+        this.jumpConst = 12
+        this.mergeConst = 6
 
         // Debug
         if (this.debug.active) {
@@ -90,7 +90,7 @@ export default class Camera {
 
     update() {
         //do boundarycheck every update to achive infinity effect
-        //this.boundaryCheck()
+        this.boundaryCheck()
 
         this.controls.update()
     }

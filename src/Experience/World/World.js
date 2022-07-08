@@ -31,8 +31,6 @@ export default class World {
             this.clothsimulation = new ClothSimulation()
 
 
-
-
             this.environment = new Environment()
 
 
