@@ -25,15 +25,35 @@ export default class Fog {
         this.scene.fog = new THREE.Fog(color, near, far)
         this.scene.background = new THREE.Color(color)
 
-        // // Debug
-        // if (this.debug.active) {
-        //     this.debugFolder
-        //         .add(this.environmentMap, 'intensity')
-        //         .name('envMapIntensity')
-        //         .min(0)
-        //         .max(4)
-        //         .step(0.001)
-        //         .onChange(this.environmentMap.updateMaterials)
-        // }
+        // Debug
+        if (this.debug.active) {
+            const debugColor = {}
+            debugColor.fogColor = '#ffffff'
+
+            this.debugFolder
+                .add(this.scene.fog, 'near')
+                .name('near')
+                .min(0)
+                .max(8)
+                .step(0.001)
+
+            this.debugFolder
+                .add(this.scene.fog, 'far')
+                .name('far')
+                .min(0)
+                .max(20)
+                .step(0.001)
+
+            this.debugFolder
+                .addColor(debugColor, 'fogColor')
+                .onChange(() => {
+                    let newColor = new THREE.Color(debugColor.fogColor)
+
+                    this.scene.fog.color = newColor
+                    this.scene.background = newColor
+                })
+
+
+        }
     }
 }
