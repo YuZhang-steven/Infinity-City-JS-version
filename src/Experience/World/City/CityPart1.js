@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import Experience from "../../Experience";
 import LocationCalculation from '../../Utils/LocationCalculation';
 
+
 export default class CityPart1 {
     constructor() {
         /* 
@@ -16,6 +17,7 @@ export default class CityPart1 {
         this.locCal = new LocationCalculation()
 
         //instance copy information
+        this.instances = [];
         this.num_instances = 3
         this.center = new THREE.Vector3()
 
@@ -41,11 +43,6 @@ export default class CityPart1 {
     setModel() {
         this.model = this.cityModel.scene
 
-        //calculater the model center.
-        let roadGeometry = this.model.getObjectByName('road01').geometry
-        this.center.addVectors(roadGeometry.boundingBox.min, roadGeometry.boundingBox.max)
-        this.center.multiplyScalar(0.5)
-
         //load material
         const cityMaterial = new THREE.MeshBasicMaterial({
             reflectivity: 0.01,
@@ -64,8 +61,7 @@ export default class CityPart1 {
 
         })
 
-        //Array to save alll instances model
-        this.instances = [];
+
 
         //traversing all model parts, creating instances and add material
         this.model.traverse((child) => {
@@ -85,7 +81,7 @@ export default class CityPart1 {
                 this.scene.add(this.modelInstance)
 
                 //calculate tranlation matrix
-                let matricesArray = this.locCal.cal3Matrix(this.center)
+                let matricesArray = this.locCal.cal3Matrix(child.position)
 
                 //add matrix to each instance
                 for (let i = 0; i < this.num_instances; i++) {
