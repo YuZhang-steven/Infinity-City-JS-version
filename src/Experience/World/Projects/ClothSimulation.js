@@ -5,7 +5,7 @@ import LocationCalculation from '../../Utils/LocationCalculation'
 
 
 
-export default class ClothSimu {
+export default class ClothSimulation {
     constructor() {
         //basic Information
         this.experience = new Experience()

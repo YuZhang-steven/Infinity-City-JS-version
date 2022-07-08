@@ -3,12 +3,12 @@ import CityPart1 from './City/CityPart1.js'
 import CityPart2 from './City/CityPart2.js'
 import CityPart3 from './City/CityPart3.js'
 import CityPart4 from './City/CityPart4.js'
-import clothSimulation from './ClothSimulation.js'
 import ColorWheel from './colorWheel.js'
 import Environment from './Environment.js'
-import Floor from './Floor.js'
+
 import Fox from './Fox.js'
-import ClothSimu from './Projects/ClothSimu.js'
+import ClothSimulation from './Projects/ClothSimulation.js'
+
 
 export default class World {
     constructor() {
@@ -19,8 +19,7 @@ export default class World {
         // Wait for resources
         this.resources.on('ready', () => {
             // Setup
-            //this.floor = new Floor()
-            //this.clothSimulation = new clothSimulation()
+
             this.colorWheel = new ColorWheel()
             //this.fox = new Fox()
 
@@ -29,7 +28,7 @@ export default class World {
             this.city3 = new CityPart3()
             this.city4 = new CityPart4()
 
-            this.clothsimu = new ClothSimu()
+            this.clothsimulation = new ClothSimulation()
 
 
 
@@ -46,9 +45,7 @@ export default class World {
             this.fox.update()
         if (this.colorWheel)
             this.colorWheel.update()
-        if (this.clothSimulation)
-            this.clothSimulation.update()
-        if (this.clothsimu)
-            this.clothsimu.update()
+        if (this.clothsimulation)
+            this.clothsimulation.update()
     }
 }
