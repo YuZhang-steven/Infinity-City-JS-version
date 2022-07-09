@@ -49,5 +49,7 @@ export default class World {
             this.colorWheel.update()
         if (this.clothsimulation)
             this.clothsimulation.update()
+        if (this.meshEditor)
+            this.meshEditor.update()
     }
 }

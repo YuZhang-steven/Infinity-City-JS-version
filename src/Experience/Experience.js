@@ -12,11 +12,6 @@ import Resources from './Utils/Resources.js'
 import Interactive from './Utils/Interactive.js'
 import ProjectMatAssign from './Utils/ProjectMatAssign.js'
 
-
-
-
-
-
 let instance = null
 
 export default class Experience {
@@ -44,9 +39,7 @@ export default class Experience {
         this.interactive = new Interactive()
         this.matAssign = new ProjectMatAssign()
 
-
         this.world = new World()
-
 
         // Resize event
         this.sizes.on('resize', () => {

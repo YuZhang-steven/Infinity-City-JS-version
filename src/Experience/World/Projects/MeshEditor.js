@@ -17,6 +17,11 @@ export default class meshEditor {
         this.matAssign = this.experience.matAssign
         this.projectType = "computer_graphic"
 
+        //shader uniforms
+        this.customUniform = {
+            uTime: { value: 0 }
+        }
+
 
         //instance copy information
         this.instances = []
@@ -40,16 +45,60 @@ export default class meshEditor {
 
         const material = this.matAssign.getMaterial(this.projectType)
 
+        //change shader parameters for animation 
+        const material_cube = this.matAssign.getMaterial(this.projectType)
+
+        material_cube.onBeforeCompile = (shader) => {
+            //console.log(shader.uniforms)
+            shader.uniforms.uTime = this.customUniform.uTime
+            shader.vertexShader = shader.vertexShader.replace(
+                '#include <common>',
+                `
+                    #include <common>
+
+                    uniform float uTime;
+
+                    mat2 get2dRotationMatrix(float _angle){
+                        return mat2(cos(_angle), -sin(_angle), sin(_angle), cos(_angle));
+                    }
+                `
+
+            )
+            shader.vertexShader = shader.vertexShader.replace(
+                '#include <begin_vertex>',
+                `
+                    #include <begin_vertex>
+
+                    float angle = sin(position.y * uTime) * 0.6 + uTime * 0.02;
+                    mat2 rotateMatrix = get2dRotationMatrix(angle);
+
+                    transformed.xz = rotateMatrix * transformed.xz;
+
+                `
+
+            )
+
+
+            //console.log(shader.vertexShader)
+        }
+
+
         //event manager monitor array:check if the object already in a event situation
         let objectsHover = []
 
         this.model.traverse((child) => {
+            console.log(child)
             if (child instanceof THREE.Mesh) {
                 //add Material
-                child.material = material
+                if (child.name.startsWith("Cube")) {
+                    child.material = material_cube
+                }
+                else {
+                    child.material = material
+                }
 
                 //create instance
-                this.modelInstance = new THREE.InstancedMesh(child.geometry, material, this.num_instances)
+                this.modelInstance = new THREE.InstancedMesh(child.geometry, child.material, this.num_instances)
 
                 //add instance to the scene
                 this.scene.add(this.modelInstance)
@@ -71,13 +120,13 @@ export default class meshEditor {
 
                 child.addEventListener('mouseover', (event) => {
                     if (!objectsHover.includes(event.target)) {
-                        event.target.material.color.set(0xffffff)
+                        //event.target.material.color.set(0xffffff)
                         objectsHover.push(event.target)
                     }
                 })
                 child.addEventListener('mouseout', (event) => {
                     if (objectsHover.includes(event.target)) {
-                        event.target.material.color.set(0x00ffff)
+                        //event.target.material.color.set(0x00ffff)
                         objectsHover.pop()
                     }
                 })
@@ -87,13 +136,13 @@ export default class meshEditor {
 
                 this.modelInstance.addEventListener('mouseover', (event) => {
                     if (!objectsHover.includes(event.target)) {
-                        event.target.material.color.set(0xffffff)
+                        //event.target.material.color.set(0xffffff)
                         objectsHover.push(event.target)
                     }
                 })
                 this.modelInstance.addEventListener('mouseout', (event) => {
                     if (objectsHover.includes(event.target)) {
-                        event.target.material.color.set(0x00ffff)
+                        //event.target.material.color.set(0x00ffff)
                         objectsHover.pop()
                     }
                 })
@@ -111,6 +160,7 @@ export default class meshEditor {
         this.animation.action.play()
     }
     update() {
-        this.animation.mixer.update(this.time.delta * 0.0001)
+        this.customUniform.uTime.value = this.time.elapsed * 0.01
+        //this.animation.mixer.update(this.time.delta * 0.0001)
     }
 }
