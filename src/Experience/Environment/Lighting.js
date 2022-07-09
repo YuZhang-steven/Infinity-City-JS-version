@@ -19,7 +19,7 @@ export default class Lighting {
 
     //initiate ambient light
     setAmbientLight() {
-        this.ambientLight = new THREE.AmbientLight(0xffffff, 0)
+        this.ambientLight = new THREE.AmbientLight(0xffffff, 0.3)
         this.scene.add(this.ambientLight)
 
         // Debug

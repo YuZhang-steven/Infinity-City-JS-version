@@ -87,7 +87,7 @@ export default class meshEditor {
         let objectsHover = []
 
         this.model.traverse((child) => {
-            console.log(child)
+            //console.log(child)
             if (child instanceof THREE.Mesh) {
                 //add Material
                 if (child.name.startsWith("Cube")) {
@@ -120,13 +120,13 @@ export default class meshEditor {
 
                 child.addEventListener('mouseover', (event) => {
                     if (!objectsHover.includes(event.target)) {
-                        //event.target.material.color.set(0xffffff)
+                        event.target.material.color.set(0xffffff)
                         objectsHover.push(event.target)
                     }
                 })
                 child.addEventListener('mouseout', (event) => {
                     if (objectsHover.includes(event.target)) {
-                        //event.target.material.color.set(0x00ffff)
+                        event.target.material.color.set(0x00ffff)
                         objectsHover.pop()
                     }
                 })
