@@ -16,6 +16,7 @@ export default class ClothSimulation {
         this.interactionManager = this.experience.interactive.instance
         this.matAssign = this.experience.matAssign
         this.projectType = "computer_graphic"
+        this.modalPage = this.experience.modalPage
 
 
         //instance copy information
@@ -71,13 +72,14 @@ export default class ClothSimulation {
 
                 child.addEventListener('mouseover', (event) => {
                     if (!objectsHover.includes(event.target)) {
-                        event.target.material.color.set(0xffffff)
+                        material.color.set(0xffffff)
+                        this.modalPage.setModal()
                         objectsHover.push(event.target)
                     }
                 })
                 child.addEventListener('mouseout', (event) => {
                     if (objectsHover.includes(event.target)) {
-                        event.target.material.color.set(0x00ffff)
+                        material.color.set(0x00ffff)
                         objectsHover.pop()
                     }
                 })
@@ -87,13 +89,13 @@ export default class ClothSimulation {
 
                 this.modelInstance.addEventListener('mouseover', (event) => {
                     if (!objectsHover.includes(event.target)) {
-                        event.target.material.color.set(0xffffff)
+                        material.color.set(0xffffff)
                         objectsHover.push(event.target)
                     }
                 })
                 this.modelInstance.addEventListener('mouseout', (event) => {
                     if (objectsHover.includes(event.target)) {
-                        event.target.material.color.set(0x00ffff)
+                        material.color.set(0x00ffff)
                         objectsHover.pop()
                     }
                 })

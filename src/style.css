@@ -13,6 +13,7 @@ body {
     top: 0;
     left: 0;
     outline: none;
+    z-index: -1;
 }
 
 /* The Modal (background) */
@@ -35,7 +36,7 @@ body {
     /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
     /* Fallback color */
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
     /* Black w/ opacity */
 
 }
