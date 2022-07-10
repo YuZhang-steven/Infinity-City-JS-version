@@ -3,7 +3,7 @@ import CityPart1 from './City/CityPart1.js'
 import CityPart2 from './City/CityPart2.js'
 import CityPart3 from './City/CityPart3.js'
 import CityPart4 from './City/CityPart4.js'
-import ColorWheel from './colorWheel.js'
+//import ColorWheel from './colorWheel.js'
 import Lighting from '../Environment/Lighting.js'
 
 import Fox from './Fox.js'
@@ -22,7 +22,7 @@ export default class World {
         this.resources.on('ready', () => {
             // Setup
 
-            this.colorWheel = new ColorWheel()
+            //this.colorWheel = new ColorWheel()
             //this.fox = new Fox()
 
             this.city1 = new CityPart1()

@@ -120,13 +120,15 @@ export default class meshEditor {
 
                 child.addEventListener('mouseover', (event) => {
                     if (!objectsHover.includes(event.target)) {
-                        event.target.material.color.set(0xffffff)
+                        material.color.set(0xffffff)
+                        material_cube.color.set(0xffffff)
                         objectsHover.push(event.target)
                     }
                 })
                 child.addEventListener('mouseout', (event) => {
                     if (objectsHover.includes(event.target)) {
-                        event.target.material.color.set(0x00ffff)
+                        material.color.set(0x00ffff)
+                        material_cube.color.set(0x00ffff)
                         objectsHover.pop()
                     }
                 })
