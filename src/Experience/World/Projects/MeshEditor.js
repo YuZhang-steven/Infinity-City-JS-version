@@ -16,6 +16,7 @@ export default class meshEditor {
         this.interactionManager = this.experience.interactive.instance
         this.matAssign = this.experience.matAssign
         this.projectType = "computer_graphic"
+        this.modalPage = this.experience.modalPage
 
         //shader uniforms
         this.customUniform = {
@@ -43,10 +44,13 @@ export default class meshEditor {
     setModel() {
         this.model = this.projectModel.scene
 
+        //call material assignment function to get the right material and record the color information
         const material = this.matAssign.getMaterial(this.projectType)
+        const color_ori = material.color.getHex()
 
         //change shader parameters for animation 
         const material_cube = this.matAssign.getMaterial(this.projectType)
+
 
         material_cube.onBeforeCompile = (shader) => {
             //console.log(shader.uniforms)
@@ -127,27 +131,17 @@ export default class meshEditor {
                 })
                 child.addEventListener('mouseout', (event) => {
                     if (objectsHover.includes(event.target)) {
-                        material.color.set(0x00ffff)
-                        material_cube.color.set(0x00ffff)
+                        material.color.set(color_ori)
+                        material_cube.color.set(color_ori)
                         objectsHover.pop()
                     }
                 })
-
-                //add Event Listener to instance model
-                this.interactionManager.add(this.modelInstance)
-
-                this.modelInstance.addEventListener('mouseover', (event) => {
-                    if (!objectsHover.includes(event.target)) {
-                        //event.target.material.color.set(0xffffff)
-                        objectsHover.push(event.target)
-                    }
-                })
-                this.modelInstance.addEventListener('mouseout', (event) => {
+                child.addEventListener('mousedown', (event) => {
                     if (objectsHover.includes(event.target)) {
-                        //event.target.material.color.set(0x00ffff)
-                        objectsHover.pop()
+                        this.modalPage.setModal()
                     }
                 })
+
             }
 
         })

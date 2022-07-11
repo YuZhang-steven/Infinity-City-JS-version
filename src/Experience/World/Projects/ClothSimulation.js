@@ -26,7 +26,6 @@ export default class ClothSimulation {
 
         //model file location
         this.projectModel = this.resources.items.clothSimu
-        //console.log(this.projectModel)
 
         //setting model call
         this.setModel()
@@ -76,9 +75,7 @@ export default class ClothSimulation {
                 child.addEventListener('mouseover', (event) => {
 
                     if (!objectsHover.includes(event.target)) {
-
                         material.color.set(0xffffff)
-
                         objectsHover.push(event.target)
                     }
                 })
