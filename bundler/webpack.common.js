@@ -3,7 +3,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
+
 module.exports = {
+
+    externals: {
+
+        fs: require('fs'),
+
+
+    },
     entry: path.resolve(__dirname, '../src/script.js'),
     output:
     {
@@ -86,7 +94,10 @@ module.exports = {
                     {
                         filename: 'assets/images/[hash][ext]'
                     }
-                }
+                },
+
+
             ]
-    }
+    },
+
 }

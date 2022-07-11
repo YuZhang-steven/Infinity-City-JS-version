@@ -7,6 +7,10 @@ import LocationCalculation from '../../Utils/LocationCalculation'
 
 export default class meshEditor {
     constructor() {
+        //project information
+        this.projectType = "computer_graphic"
+        this.projectName = "meshEditor"
+
         //basic Information
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -15,8 +19,9 @@ export default class meshEditor {
         this.time = this.experience.time
         this.interactionManager = this.experience.interactive.instance
         this.matAssign = this.experience.matAssign
-        this.projectType = "computer_graphic"
         this.modalPage = this.experience.modalPage
+
+
 
         //shader uniforms
         this.customUniform = {
@@ -138,7 +143,7 @@ export default class meshEditor {
                 })
                 child.addEventListener('mousedown', (event) => {
                     if (objectsHover.includes(event.target)) {
-                        this.modalPage.setModal()
+                        this.modalPage.setModal(this.projectName)
                     }
                 })
 
