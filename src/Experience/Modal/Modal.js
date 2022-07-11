@@ -1,4 +1,4 @@
-import { name } from "file-loader"
+
 import Experience from "../Experience"
 
 //import * from '../../../static/projects/meshEditor'
@@ -26,7 +26,7 @@ export default class Modal {
             <div class="mySlides">
                 <div class="numbertext">${num} / ${count}</div>
                 <img src=${image.path} style="width:100%">
-                <div class="text">${name}</div>
+                <div class="text">${image.name}</div>
             </div>
             `;
         }
