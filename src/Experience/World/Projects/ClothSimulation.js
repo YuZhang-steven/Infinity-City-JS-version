@@ -39,7 +39,10 @@ export default class ClothSimulation {
     setModel() {
         this.model = this.projectModel.scene
 
+        //call material assignment function to get the right material and record the color information
         const material = this.matAssign.getMaterial(this.projectType)
+        const color_ori = material.color.getHex()
+
 
         //event manager monitor array:check if the object already in a event situation
         let objectsHover = []
@@ -71,34 +74,27 @@ export default class ClothSimulation {
                 this.interactionManager.add(child)
 
                 child.addEventListener('mouseover', (event) => {
+
                     if (!objectsHover.includes(event.target)) {
+
                         material.color.set(0xffffff)
-                        this.modalPage.setModal()
+
                         objectsHover.push(event.target)
                     }
                 })
                 child.addEventListener('mouseout', (event) => {
                     if (objectsHover.includes(event.target)) {
-                        material.color.set(0x00ffff)
+                        material.color.set(color_ori)
                         objectsHover.pop()
                     }
                 })
-
-                //add Event Listener to instance model
-                this.interactionManager.add(this.modelInstance)
-
-                this.modelInstance.addEventListener('mouseover', (event) => {
-                    if (!objectsHover.includes(event.target)) {
-                        material.color.set(0xffffff)
-                        objectsHover.push(event.target)
-                    }
-                })
-                this.modelInstance.addEventListener('mouseout', (event) => {
+                child.addEventListener('mousedown', (event) => {
                     if (objectsHover.includes(event.target)) {
-                        material.color.set(0x00ffff)
-                        objectsHover.pop()
+                        this.modalPage.setModal()
                     }
                 })
+
+
             }
 
         })

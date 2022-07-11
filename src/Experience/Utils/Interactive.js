@@ -19,4 +19,7 @@ export default class Interactive {
             this.domElement
         )
     }
+    update() {
+        this.instance.update()
+    }
 }
