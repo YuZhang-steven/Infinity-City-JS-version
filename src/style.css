@@ -70,20 +70,25 @@ body {
 }
 
 /* Caption of Modal Image, Same Width as the Image */
-#modalCaption {
+#modal-caption {
+    font-size: 30px;
+    padding: 10px 50px 20px;
+    position: absolute;
+    bottom: 8px;
     margin: auto;
     display: block;
     width: 80%;
     max-width: 700px;
     text-align: center;
-    color: rgb(0, 0, 0);
-    padding: 10px 0;
+    color: rgb(255, 0, 0);
+    padding: 2px 16px;
     height: 150px;
 }
 
 /* Modal Animation-start with Zoom in to show */
 .modal-content,
-#modalCaption {
+#modal-caption {
+
     animation-name: zoom;
     animation-duration: 0.6s;
 }
@@ -126,22 +131,33 @@ body {
 /* Hide the images by default */
 .mySlides {
     display: none;
-    animation-name: fadeIn;
-    animation-duration: 0.8s;
+    animation-name: fadeInFast;
+    animation-duration: 1s;
+}
+
+@keyframes fadeInFast {
+    0% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 /* Next & previous buttons */
 .prev,
 .next {
+    background-color: #f2f2f277;
     cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;
-    margin-top: -22px;
+    margin-top: -50px;
     padding: 16px;
     color: rgb(0, 0, 0);
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
@@ -149,37 +165,33 @@ body {
 
 /* Position the "next button" to the right */
 .next {
-    right: 0;
+    right: 20%;
     border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
-    background-color: rgba(0, 0, 0, 0.37);
+    background-color: #f2f2f2a8;
 }
 
-/* Caption text */
-.text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-}
+
 
 /* Number text (1/3 etc) */
 .numbertext {
-    color: #f2f2f2;
-    font-size: 10px;
+    color: #000000;
+    font-size: 15px;
     padding: 8px 12px;
     position: absolute;
     top: 0;
 }
 
 /* The dots/bullets/indicators */
+.dots {
+    position: absolute;
+}
+
+
 .dot {
     cursor: pointer;
     height: 15px;

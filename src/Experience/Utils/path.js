@@ -1,8 +1,8 @@
-import image01 from '../../../static/projects/meshEditor/meshEditor001.PNG'
-import image02 from '../../../static/projects/meshEditor/meshEditor002.PNG'
-import image03 from '../../../static/projects/meshEditor/meshEditor003.PNG'
-import image04 from '../../../static/projects/meshEditor/meshEditor004.PNG'
-import image05 from '../../../static/projects/meshEditor/meshEditor005.PNG'
+import '../../../static/projects/meshEditor/meshEditor001.PNG'
+import '../../../static/projects/meshEditor/meshEditor002.PNG'
+import '../../../static/projects/meshEditor/meshEditor003.PNG'
+import '../../../static/projects/meshEditor/meshEditor004.PNG'
+import '../../../static/projects/meshEditor/meshEditor005.PNG'
 //import image02 from '../../../static/projects/meshEditor/meshEditor002.PNG'
 
 
