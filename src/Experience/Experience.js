@@ -12,7 +12,7 @@ import Resources from './Utils/Resources.js'
 import Interactive from './Utils/Interactive.js'
 import ProjectMatAssign from './Utils/ProjectMatAssign.js'
 import Modal from './Modal/Modal.js'
-import ProjectPath from '../../static/projects/meshEditor/path.js'
+import ProjectPath from './Utils/path.js'
 
 let instance = null
 
