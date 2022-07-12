@@ -1,11 +1,13 @@
 
 import Experience from "../Experience"
+import Slides from "./Slides"
 
-//import * from '../../../static/projects/meshEditor'
+//import * from '../../../static/projects/meshEditor/001.PNG'
 export default class Modal {
     constructor() {
         this.experience = new Experience()
         this.path = this.experience.projectPath
+        this.slidesControl = new Slides()
 
 
         this.modal = document.getElementById("project_modal")
@@ -16,27 +18,38 @@ export default class Modal {
     }
 
     setModal(projectName) {
-        let folder = `../../../static/projects/${projectName}`
+        const folder = `../../../static/projects/${projectName}`
+
         this.imageCollection = this.path.get(projectName)
-        let count = this.imageCollection.length
+        const preElement = document.getElementById('modal_image')
+
+        const count = this.imageCollection.length
+
         let num = 1
-        console.log(count)
-        for (const image of this.imageCollection) {
+
+        for (const item of this.imageCollection) {
+
+
             let html = `
-            <div class="mySlides">
+            <div id="slide${num}" class="mySlides">
                 <div class="numbertext">${num} / ${count}</div>
-                <img src=${image.path} style="width:100%">
-                <div class="text">${image.name}</div>
+                <img src=${item.path} style="width:100%">
+                <div class="text">${item.name}</div>
             </div>
             `;
+
+
+            preElement.insertAdjacentHTML("beforeend", html)
+
+            num++
         }
 
 
-
-        console.log(this.imageCollection)
+        console.log(document.getElementsByClassName("mySlides")[0])
 
 
         this.modal.classList.add("show")
+        this.slidesControl.showSlides(1)
         this.closeTrigger()
 
     }
