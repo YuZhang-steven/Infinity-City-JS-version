@@ -32,12 +32,14 @@ export default class Experience {
         // Options
         this.canvas = _canvas
 
+        //loading page
+        this.loadPage = new LoadingPage()
+
         // Setup
         this.debug = new Debug()
         this.sizes = new Sizes()
         this.time = new Time()
         this.scene = new THREE.Scene()
-        this.loadPage = new LoadingPage()
         this.resources = new Resources(sources)
         this.camera = new Camera()
         this.renderer = new Renderer()
@@ -49,6 +51,11 @@ export default class Experience {
 
         this.world = new World()
         this.modalPage = new Modal()
+
+        //loading ready event
+        this.resources.on('ready', () => {
+            this.loadPage.loadReady()
+        })
 
         // Resize event
         this.sizes.on('resize', () => {

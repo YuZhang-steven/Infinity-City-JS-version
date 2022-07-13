@@ -1,38 +1,37 @@
-
 import * as THREE from 'three'
+import { gsap } from 'gsap'
 
 import Experience from '../../Experience'
 
 export default class LoadingPage {
     constructor() {
         this.experience = new Experience()
-        this.scene = this.experience.scene
-
+        this.loadingBoard = document.getElementById("loading_page")
+        this.loadingBar = document.getElementById("loading_bar")
+        console.log(this.loadingBoard)
         this.set()
     }
 
+    //initial loading page
     set() {
-        this.overlayGeometry = new THREE.PlaneGeometry(2, 2, 1, 1)
-        this.overlayMaterial = new THREE.ShaderMaterial({
-            transparent: true,
-            uniforms: {
-                uAlpha: { value: 1 }
-            },
-            vertexShader: `
-            void main(){
-                gl_Position = vec4(position, 1.0);
-            }
-            `,
-            fragmentShader: `
-            uniform float uAlpha;
 
-            void main(){
-                
-                gl_FragColor = vec4(1.0, 1.0, 1.0, uAlpha);
-            }
-            `
-        })
-        this.overlay = new THREE.Mesh(this.overlayGeometry, this.overlayMaterial)
-        this.scene.add(this.overlay)
     }
+
+    //during loading change call this funtion
+    loadProgress(ratio) {
+        this.loadingBar.style.transform = `scaleX(${ratio})`
+    }
+
+    //after loading ready call this function
+    loadReady() {
+        gsap.to("#loading_page", { "opacity": 0, duration: 3 })
+        setTimeout(() => {
+            this.loadingBoard.innerHTML = ""
+        }, 3000);
+
+
+
+
+    }
+
 }

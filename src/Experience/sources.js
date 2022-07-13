@@ -38,11 +38,6 @@ export default [
         path: 'models/colorWheel/ColorWheel.glb'
     },
     {
-        name: 'clothSimulation',
-        type: 'gltfModel',
-        path: 'models/cloth/cloth_test01.glb'
-    },
-    {
         name: 'cityPart1',
         type: 'gltfModel',
         path: 'models/city/cityPart01.glb'

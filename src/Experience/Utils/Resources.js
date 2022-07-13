@@ -1,6 +1,8 @@
 import * as THREE from 'three'
+
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
+import Experience from '../Experience.js';
 import EventEmitter from './EventEmitter.js'
 
 export default class Resources extends EventEmitter {
@@ -8,6 +10,8 @@ export default class Resources extends EventEmitter {
         super()
 
         this.sources = sources
+        this.experience = new Experience()
+        this.loadpage = this.experience.loadPage
 
         this.items = {}
         this.toLoad = this.sources.length
@@ -18,11 +22,13 @@ export default class Resources extends EventEmitter {
     }
 
     setLoaders() {
+        this.loadingManager = new THREE.LoadingManager()
+
         this.loaders = {}
-        this.loaders.gltfLoader = new GLTFLoader()
-        this.loaders.textureLoader = new THREE.TextureLoader()
-        this.loaders.cubeTextureLoader = new THREE.CubeTextureLoader()
-        this.loaders.rgbeLoader = new RGBELoader()
+        this.loaders.gltfLoader = new GLTFLoader(this.loadingManager)
+        this.loaders.textureLoader = new THREE.TextureLoader(this.loadingManager)
+        this.loaders.cubeTextureLoader = new THREE.CubeTextureLoader(this.loadingManager)
+        this.loaders.rgbeLoader = new RGBELoader(this.loadingManager)
     }
 
     startLoading() {
@@ -67,9 +73,12 @@ export default class Resources extends EventEmitter {
         this.items[source.name] = file
 
         this.loaded++
+        this.ratio = this.loaded / this.toLoad
+        this.loadpage.loadProgress(this.ratio)
 
         if (this.loaded === this.toLoad) {
             this.trigger('ready')
+
         }
     }
 }

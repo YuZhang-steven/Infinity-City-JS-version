@@ -18,6 +18,37 @@ body {
     overflow: hidden;
 }
 
+/* Loading page */
+#loading_page {
+    display: block;
+    opacity: 1;
+}
+
+#loading_cover {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 249, 239);
+}
+
+#loading_bar {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: top left;
+}
+
+
+
+
+
+
 /* The Modal (background) */
 .modal {
     /* flex box setting */
