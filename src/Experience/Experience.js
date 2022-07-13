@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 
+
 import sources from './sources.js'
 
 import Debug from './Utils/Debug.js'
@@ -13,6 +14,7 @@ import Interactive from './Utils/Interactive.js'
 import ProjectMatAssign from './Utils/ProjectMatAssign.js'
 import Modal from './Modal/Modal.js'
 import ProjectPath from './Utils/path.js'
+import LoadingPage from './World/others/LoadingPage.js'
 
 let instance = null
 
@@ -35,6 +37,7 @@ export default class Experience {
         this.sizes = new Sizes()
         this.time = new Time()
         this.scene = new THREE.Scene()
+        this.loadPage = new LoadingPage()
         this.resources = new Resources(sources)
         this.camera = new Camera()
         this.renderer = new Renderer()
@@ -42,6 +45,7 @@ export default class Experience {
         this.matAssign = new ProjectMatAssign()
         this.projectPath = new ProjectPath()
         //console.log(this.projectPath)
+
 
         this.world = new World()
         this.modalPage = new Modal()
