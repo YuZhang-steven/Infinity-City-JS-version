@@ -9,21 +9,37 @@
 
 <body>
     <canvas class="webgl"></canvas>
-    <!-- The Modal -->
-    <div id="project_modal" class="modal">
-        <!-- Close Button -->
-        <span class="close">&empty;</span>
-        <!-- Modal Content -->
-        <div id="modal_image" class="modal-content">
 
-            <!-- Next and previous buttons -->
-            <a class="next">&#10095;</a>
-            <a class="prev">&#10094;</a>
+    <!-- The Modal -->
+    <div class="modal">
+        <!-- Close Button -->
+        <span id="model_close">&empty;</span>
+        <div id="slides_box">
+            <div id="slides_number">
+
+            </div>
+            <div id="slidewithbutton">
+                <a id="prev_button" class="slides_button">&#10094;</a>
+                <!-- slide image -->
+                <div id="modal_image">
+
+                </div>
+                <!-- Next and previous buttons -->
+                <a id="next_button" class="slides_button">&#10095;</a>
+            </div>
+
+        </div>
+        <div id="slide_caption">
 
         </div>
 
-
         <div id="dots" style="text-align:center">
+
+        </div>
+        <div id="project_name">
+
+        </div>
+        <div id="project_text">
 
         </div>
     </div>

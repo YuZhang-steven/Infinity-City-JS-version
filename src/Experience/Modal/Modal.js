@@ -11,10 +11,10 @@ export default class Modal {
         //
 
 
-        this.modal = document.getElementById("project_modal")
+        this.modal = document.getElementsByClassName("modal")[0]
         this.modalImg = document.getElementById("img01")
         this.captionText = document.getElementById("modalCaption")
-        this.closebutton = document.getElementsByClassName("close")[0]
+        this.closebutton = document.getElementById("model_close")
 
     }
 
@@ -22,7 +22,9 @@ export default class Modal {
         const folder = `../../../static/projects/${projectName}`
 
         this.imageCollection = this.path.get(projectName)
+        const slidesNumElement = document.getElementById('slides_number')
         const slidesElement = document.getElementById('modal_image')
+        const slidesCaptionElement = document.getElementById('slide_caption')
 
         const dotsElement = document.getElementById('dots')
 
@@ -32,16 +34,27 @@ export default class Modal {
         //traversal all images, create slides and add dots
         let num = 1 //item count
         for (const item of this.imageCollection) {
-            //create slide element
+
+
+            //create slide number
             let html = `
+            <div class="slide_numtext">${num} / ${count}</div>
+            `;
+            slidesNumElement.insertAdjacentHTML("beforeend", html)
+
+            //create image slide
+            html = `
             <div id="slide${num}" class="mySlides">
-                <div class="numbertext">${num} / ${count}</div>
                 <img src=${item.path} style="width:100%">
-                <div id="modal-caption">${item.name}</div>
             </div>
             `;
-
             slidesElement.insertAdjacentHTML("beforeend", html)
+
+            //create slide caption
+            html = `
+            <div class="image_caption">${item.name}</div>
+            `;
+            slidesCaptionElement.insertAdjacentHTML("beforeend", html)
 
             //create dot element
             html = `
@@ -49,6 +62,7 @@ export default class Modal {
             `
             dotsElement.insertAdjacentHTML("beforeend", html)
             let curr_dot = document.getElementById(`dot${num}`)
+
             //add dot element click event
             curr_dot.onclick = () => {
                 let n = curr_dot.id.replace(/[^0-9\.]/g, '')
@@ -59,11 +73,11 @@ export default class Modal {
             //add count
             num++
         }
-
+        console.log(document.getElementById(`dots`))
 
         //add click event on previous and next buttons.
-        let preButton = document.getElementsByClassName("prev")[0]
-        let nextButton = document.getElementsByClassName("next")[0]
+        let preButton = document.getElementById("prev_button")
+        let nextButton = document.getElementById("next_button")
 
         preButton.onclick = () => {
             this.slides.plusSlides(-1)
@@ -85,6 +99,7 @@ export default class Modal {
     closeTrigger() {
         this.closebutton.onclick = () => {
             this.modal.classList.remove("show")
+
         }
     }
 }
