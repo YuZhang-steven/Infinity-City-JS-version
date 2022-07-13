@@ -25,7 +25,7 @@ export default class LoadingPage {
     //after loading ready call this function
     loadReady() {
         gsap.to("#loading_page", { "opacity": 0, duration: 3 })
-        gsap.to("#loading_page", { "opacity": 0, duration: 3 })
+        gsap.to(this.experience.camera.instance.position, { y: 2, duration: 3 })
         setTimeout(() => {
             this.loadingBoard.innerHTML = ""
         }, 3000);
