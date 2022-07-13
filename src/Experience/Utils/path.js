@@ -19,7 +19,7 @@ export default class ProjectPath {
     }
     addAllPath() {
         this.pathMap.set(
-            'meshEditor',
+            "meshEditorImg",
             [
                 {
                     name: 'Curve01',
@@ -46,6 +46,22 @@ export default class ProjectPath {
                 },
 
             ]
+        )
+        this.pathMap.set(
+            "meshEditorText", [
+            {
+                type: "name",
+                text: "Mesh Editor"
+            },
+            {
+                type: "intro",
+                text: "We implement an editor with can show and change the Bezier Curves and Mesh Geometry. We use de Castelijau to represent Bezier curves and also Bezier surfaces. We also use a half-edge structure to store and manipulate the mesh. Through loop subdivision with flipping and splitting edges, the editor can upsample the meshed to get a smoother surface."
+            },
+            {
+                type: "type",
+                text: "Computer Graphic"
+            },
+        ]
         )
     }
 

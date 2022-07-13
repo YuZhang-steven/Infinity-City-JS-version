@@ -8,26 +8,31 @@ export default class Modal {
         this.experience = new Experience()
         this.slides = new Slides()
         this.path = this.experience.projectPath
-        //
 
-
+        //Modal Element(Static)
         this.modal = document.getElementsByClassName("modal")[0]
-        this.modalImg = document.getElementById("img01")
         this.captionText = document.getElementById("modalCaption")
         this.closebutton = document.getElementById("model_close")
+
+        //Slides change related Element(dynamicly change)
+        //build new when each time the modal open
+        this.slidesNumElement = document.getElementById('slides_number')
+        this.slidesElement = document.getElementById('modal_image')
+        this.slidesCaptionElement = document.getElementById('slide_caption')
+        this.dotsElement = document.getElementById('dots')
+
+        //project related Element(dynamicly change)
+        //build new when each time the modal open
+        this.projectName = document.getElementById("project_name")
+        this.projectText = document.getElementById("project_text")
+        this.projectType = document.getElementById("project_type")
 
     }
 
     setModal(projectName) {
-        const folder = `../../../static/projects/${projectName}`
 
-        this.imageCollection = this.path.get(projectName)
-        const slidesNumElement = document.getElementById('slides_number')
-        const slidesElement = document.getElementById('modal_image')
-        const slidesCaptionElement = document.getElementById('slide_caption')
-
-        const dotsElement = document.getElementById('dots')
-
+        this.imageCollection = this.path.get(projectName + "Img")
+        this.textCollection = this.path.get(projectName + "Text")
 
         const count = this.imageCollection.length
 
@@ -40,7 +45,7 @@ export default class Modal {
             let html = `
             <div class="slide_numtext">${num} / ${count}</div>
             `;
-            slidesNumElement.insertAdjacentHTML("beforeend", html)
+            this.slidesNumElement.insertAdjacentHTML("beforeend", html)
 
             //create image slide
             html = `
@@ -48,19 +53,19 @@ export default class Modal {
                 <img src=${item.path} style="width:100%">
             </div>
             `;
-            slidesElement.insertAdjacentHTML("beforeend", html)
+            this.slidesElement.insertAdjacentHTML("beforeend", html)
 
             //create slide caption
             html = `
             <div class="image_caption">${item.name}</div>
             `;
-            slidesCaptionElement.insertAdjacentHTML("beforeend", html)
+            this.slidesCaptionElement.insertAdjacentHTML("beforeend", html)
 
             //create dot element
             html = `
             <span id="dot${num}" class="dot"></span>
             `
-            dotsElement.insertAdjacentHTML("beforeend", html)
+            this.dotsElement.insertAdjacentHTML("beforeend", html)
             let curr_dot = document.getElementById(`dot${num}`)
 
             //add dot element click event
@@ -73,7 +78,7 @@ export default class Modal {
             //add count
             num++
         }
-        console.log(document.getElementById(`dots`))
+
 
         //add click event on previous and next buttons.
         let preButton = document.getElementById("prev_button")
@@ -85,6 +90,29 @@ export default class Modal {
         nextButton.onclick = () => {
             this.slides.plusSlides(1)
         }
+
+
+        //add project and text
+        for (const item of this.textCollection) {
+            if (item.type === "name") {
+                let html = `
+                            <h1>${item.text}<h1>
+                           `
+                this.projectName.insertAdjacentHTML("beforeend", html)
+            } else if (item.type === "intro") {
+                let html = `
+                            <p>${item.text}<p>
+                           `
+                this.projectText.insertAdjacentHTML("beforeend", html)
+            } else if (item.type === "type") {
+                let html = `
+                            <h2>${item.text}<h2>
+                           `
+                this.projectType.insertAdjacentHTML("beforeend", html)
+            }
+        }
+
+
 
         //show class and first slide
         this.modal.classList.add("show")
@@ -98,7 +126,20 @@ export default class Modal {
     //add closebutton event
     closeTrigger() {
         this.closebutton.onclick = () => {
+            //unshow modal page
             this.modal.classList.remove("show")
+
+            //delete all slides information
+            this.slidesNumElement.innerHTML = ""
+            this.slidesElement.innerHTML = ""
+            this.slidesCaptionElement.innerHTML = ""
+            this.dotsElement.innerHTML = ""
+
+            //delete project information
+            this.projectName.innerHTML = ""
+            this.projectText.innerHTML = ""
+            this.projectType.innerHTML = ""
+
 
         }
     }

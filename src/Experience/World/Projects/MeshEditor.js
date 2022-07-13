@@ -58,7 +58,6 @@ export default class meshEditor {
 
 
         material_cube.onBeforeCompile = (shader) => {
-            //console.log(shader.uniforms)
             shader.uniforms.uTime = this.customUniform.uTime
             shader.vertexShader = shader.vertexShader.replace(
                 '#include <common>',
@@ -87,8 +86,6 @@ export default class meshEditor {
 
             )
 
-
-            //console.log(shader.vertexShader)
         }
 
 

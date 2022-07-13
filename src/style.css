@@ -184,7 +184,6 @@ body {
 }
 
 /* The dots/bullets/indicators */
-
 .dot {
     cursor: pointer;
     height: 15px;
@@ -199,4 +198,26 @@ body {
 .active,
 .dot:hover {
     background-color: rgba(0, 0, 0, 0.082);
+}
+
+/* Project Title */
+#project_name {
+    margin: 20px 2px 10px 2px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/* Project type */
+#project_type {
+    font-size: 60%;
+    margin: 0px 2px 20px 2px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+/* Project Intro */
+#project_text {
+    margin: 0px 20%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.75);
 }
