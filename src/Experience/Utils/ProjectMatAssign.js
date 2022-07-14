@@ -54,24 +54,26 @@ export default class ProjectMatAssign {
 
     //set one type of project to have  type color and other types have basic color
     highLighting(type) {
-        for (let key in this.material_projects) {
-            if (key !== type) {
-                for (let i in this.material_projects[key]) {
+        //console.log("1")
+        for (const item of this.material_projects.entries()) {
+            //console.log(item)
+            if (item[0] !== type) {
+                for (let i of item[1]) {
                     i.color.set(this.basicColor)
                 }
             } else {
-                for (let i in this.material_projects[key]) {
-                    i.color.set(this.getColor(key))
+                for (let i of item[1]) {
+                    i.color.set(this.getColor(item[0]))
                 }
             }
         }
     }
 
     setColorBack() {
-        for (let key in this.material_projects) {
+        for (const item of this.material_projects.entries()) {
 
-            for (let i in this.material_projects[key]) {
-                i.color.set(this.getColor(key))
+            for (let i of item[1]) {
+                i.color.set(this.getColor(item[0]))
             }
         }
     }
