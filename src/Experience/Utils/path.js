@@ -112,7 +112,7 @@ export default class ProjectPath {
             "clothSimulationText", [
             {
                 type: "name",
-                text: "Cloth Simulation"
+                text: "CLOTH SIMULATION"
             },
             {
                 type: "intro",

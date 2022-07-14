@@ -43,7 +43,7 @@ export default class Modal {
 
             //create slide number
             let html = `
-            <div class="slide_numtext">${num} / ${count}</div>
+            <div class="slide_numtext"><P>${num} / ${count}<P></div>
             `;
             this.slidesNumElement.insertAdjacentHTML("beforeend", html)
 
@@ -57,7 +57,7 @@ export default class Modal {
 
             //create slide caption
             html = `
-            <div class="image_caption">${item.name}</div>
+            <div class="image_caption"><P>${item.name}<P></div>
             `;
             this.slidesCaptionElement.insertAdjacentHTML("beforeend", html)
 
@@ -106,7 +106,7 @@ export default class Modal {
                 this.projectText.insertAdjacentHTML("beforeend", html)
             } else if (item.type === "type") {
                 let html = `
-                            <h2>${item.text}<h2>
+                            <P>${item.text}<P>
                            `
                 this.projectType.insertAdjacentHTML("beforeend", html)
             }
