@@ -53,6 +53,36 @@ export default [
         path: 'models/city/roadTexture01.jpg'
     },
     {
+        name: 'cityTexture2',
+        type: 'texture',
+        path: 'models/city/cityTexture02.jpg'
+    },
+    {
+        name: 'roadTexture2',
+        type: 'texture',
+        path: 'models/city/roadTexture02.jpg'
+    },
+    {
+        name: 'cityTexture3',
+        type: 'texture',
+        path: 'models/city/cityTexture03.jpg'
+    },
+    {
+        name: 'roadTexture3',
+        type: 'texture',
+        path: 'models/city/roadTexture03.jpg'
+    },
+    {
+        name: 'cityTexture4',
+        type: 'texture',
+        path: 'models/city/cityTexture04.jpg'
+    },
+    {
+        name: 'roadTexture4',
+        type: 'texture',
+        path: 'models/city/roadTexture04.jpg'
+    },
+    {
         name: 'cityPart2',
         type: 'gltfModel',
         path: 'models/city/cityPart02.glb'

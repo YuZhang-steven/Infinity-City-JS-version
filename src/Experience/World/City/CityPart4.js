@@ -23,14 +23,14 @@ export default class CityPart4 {
         //model file location
         this.cityModel = this.resources.items.cityPart4
 
-        // //texture file location
-        // this.roadTexture = this.resources.items.roadTexture4
-        // this.roadTexture.flipY = false
-        // this.roadTexture.encoding = THREE.sRGBEncoding
+        //texture file location
+        this.roadTexture = this.resources.items.roadTexture4
+        this.roadTexture.flipY = false
+        this.roadTexture.encoding = THREE.sRGBEncoding
 
-        // this.cityTexture = this.resources.items.cityTexture4
-        // this.cityTexture.flipY = false
-        // this.cityTexture.encoding = THREE.sRGBEncoding
+        this.cityTexture = this.resources.items.cityTexture4
+        this.cityTexture.flipY = false
+        this.cityTexture.encoding = THREE.sRGBEncoding
 
         //setting model call
         this.setModel()
@@ -45,13 +45,12 @@ export default class CityPart4 {
         //load material
         const cityMaterial = new THREE.MeshBasicMaterial({
             reflectivity: 0.01,
-            color: 0x0000FF,
-            //map: this.cityTexture
+            map: this.cityTexture
         })
 
         const roadMaterial = new THREE.MeshBasicMaterial({
             reflectivity: 0.01,
-            //map: this.roadTexture
+            map: this.roadTexture
         })
         const waterMaterial = new THREE.MeshBasicMaterial({
             transparent: true,

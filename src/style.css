@@ -153,11 +153,12 @@ body {
     display: none;
     animation-name: fadeIn;
     animation-duration: 1s;
+    transition: ease-in-out;
 }
 
 @keyframes fadeIn {
     0% {
-        opacity: 0.8;
+        opacity: 0.1;
     }
 
     100% {

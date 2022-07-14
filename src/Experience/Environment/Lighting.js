@@ -77,7 +77,7 @@ export default class Lighting {
 
     setEnvironmentMap() {
         this.environmentMap = {}
-        this.environmentMap.intensity = 1
+        this.environmentMap.intensity = 2
         this.environmentMap.texture = this.resources.items.hdr_background
         this.environmentMap.texture.mapping = THREE.EquirectangularReflectionMapping
 
