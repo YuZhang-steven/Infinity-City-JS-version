@@ -90,7 +90,7 @@ export default class ClothSimulation {
                 })
                 child.addEventListener('mousedown', (event) => {
                     if (objectsHover.includes(event.target)) {
-                        this.modalPage.setModal()
+                        this.modalPage.setModal(this.projectName)
                     }
                 })
 

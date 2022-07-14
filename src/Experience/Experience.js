@@ -51,7 +51,8 @@ export default class Experience {
 
         this.world = new World()
         this.modalPage = new Modal()
-        console.log(this.matAssign.material_projects)
+        //console.log(this.matAssign.material_projects)
+
         //loading ready event
         this.resources.on('ready', () => {
             this.loadPage.loadReady()
