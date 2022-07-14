@@ -7,6 +7,10 @@ import LocationCalculation from '../../Utils/LocationCalculation'
 
 export default class ClothSimulation {
     constructor() {
+        //project information
+        this.projectType = "computer_graphic"
+        this.projectName = "clothSimulation"
+
         //basic Information
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -15,7 +19,6 @@ export default class ClothSimulation {
         this.time = this.experience.time
         this.interactionManager = this.experience.interactive.instance
         this.matAssign = this.experience.matAssign
-        this.projectType = "computer_graphic"
         this.modalPage = this.experience.modalPage
 
 

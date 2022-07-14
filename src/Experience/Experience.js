@@ -46,12 +46,12 @@ export default class Experience {
         this.interactive = new Interactive()
         this.matAssign = new ProjectMatAssign()
         this.projectPath = new ProjectPath()
-        //console.log(this.projectPath)
+
 
 
         this.world = new World()
         this.modalPage = new Modal()
-
+        console.log(this.matAssign.material_projects)
         //loading ready event
         this.resources.on('ready', () => {
             this.loadPage.loadReady()

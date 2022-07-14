@@ -36,11 +36,9 @@ export default class meshEditor {
 
         //model file location
         this.projectModel = this.resources.items.meshEditor
-        //console.log(this.projectModel)
 
         //setting model call
         this.setModel()
-        //this.setAnimation()
     }
 
     /*
