@@ -371,3 +371,55 @@ p {
 .drop-show {
     display: block;
 }
+
+/*About Page*/
+#about_box {
+    display: flex;
+    flex-flow: row
+}
+
+@media only screen and (max-width: 700px) {
+    #about_box {
+        flex-flow: column;
+        align-items: center;
+
+    }
+
+    #social1 {
+        max-width: 160px;
+        justify-content: space-evenly;
+    }
+
+    #selfintro {
+        padding: 8%
+    }
+}
+
+#selfandcontact {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+}
+
+#mail1 {
+    padding: 6% 0 10% 0;
+    font-weight: 700;
+    font-size: 15px;
+    opacity: 0.6;
+}
+
+#photo1 {
+    width: 30%;
+    opacity: 0.8;
+}
+
+#social1 {
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.7;
+}
+
+#selfintro {
+    opacity: 0.7;
+    font-size: 15px;
+}

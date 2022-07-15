@@ -12,6 +12,12 @@ import '../../../static/projects/clothSimulation/clothSimulation005.PNG'
 import '../../../static/projects/clothSimulation/clothSimulation006.PNG'
 import '../../../static/projects/clothSimulation/clothSimulation007.PNG'
 
+import '../../../static/others/photos1.jpg'
+import '../../../static/others/anti-wechat-50.png'
+import '../../../static/others/github-50.png'
+import '../../../static/others/instagram-50.png'
+import '../../../static/others/linkedin-50.png'
+
 
 
 export default class ProjectPath {
@@ -121,6 +127,35 @@ export default class ProjectPath {
             {
                 type: "type",
                 text: "Computer Graphic"
+            },
+        ]
+        )
+        this.pathMap.set(
+            "about", [
+            {
+                type: "photo",
+                text: "CLOTH SIMULATION",
+                path: '/assets/img/photos1.jpg'
+            },
+            {
+                name: 'anti_wechat',
+                type: 'icon',
+                path: '/assets/img/anti-wechat-50.png'
+            },
+            {
+                name: 'instagram',
+                type: 'icon',
+                path: '/assets/img/instagram-50.png'
+            },
+            {
+                name: 'github',
+                type: 'icon',
+                path: '/assets/img/github-50.png'
+            },
+            {
+                name: 'linkedin',
+                type: 'icon',
+                path: '/assets/img/linkedin-50.png'
             },
         ]
         )

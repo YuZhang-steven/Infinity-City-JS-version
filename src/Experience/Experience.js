@@ -16,6 +16,7 @@ import Modal from './Modal/Modal.js'
 import ProjectPath from './Utils/path.js'
 import LoadingPage from './World/others/LoadingPage.js'
 import DropdownManu from './World/others/DropdownManu.js'
+import ModalContact from './Modal/ModalContact.js'
 
 let instance = null
 
@@ -36,6 +37,8 @@ export default class Experience {
         //loading page
         this.loadPage = new LoadingPage()
 
+
+
         //dropdownManu
         this.dropdownManu = new DropdownManu()
 
@@ -55,6 +58,7 @@ export default class Experience {
 
         this.world = new World()
         this.modalPage = new Modal()
+        this.aboutPage = new ModalContact()
         //console.log(this.matAssign.material_projects)
 
         //loading ready event

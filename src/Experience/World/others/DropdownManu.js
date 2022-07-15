@@ -1,5 +1,9 @@
+import Experience from "../../Experience"
+
 export default class DropdownManu {
     constructor() {
+        this.experience = new Experience()
+
         this.manu = document.getElementsByClassName("myDropdown")[0]
         this.button = document.getElementsByClassName("dropbtn")[0]
         this.projectsTypes = document.getElementsByClassName("project_collection")
@@ -7,7 +11,7 @@ export default class DropdownManu {
 
 
         this.about_btn = document.getElementById("manu_about")
-        this.contact_btn = document.getElementById("manu_contact")
+        // this.contact_btn = document.getElementById("manu_contact")
         this.project_btn = document.getElementById("manu_project")
         this.setAnimation()
     }
@@ -28,6 +32,12 @@ export default class DropdownManu {
                 }
             }
         }
+        this.about_btn.onclick = () => {
+
+            this.experience.aboutPage.setModal()
+
+        }
+
 
     }
 }

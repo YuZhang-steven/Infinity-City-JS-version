@@ -2,7 +2,7 @@
 import Experience from "../Experience"
 import Slides from "./Slides"
 
-//import * from '../../../static/projects/meshEditor/001.PNG'
+
 export default class Modal {
     constructor() {
         this.experience = new Experience()
