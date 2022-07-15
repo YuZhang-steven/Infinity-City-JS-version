@@ -45,8 +45,8 @@ export default class Camera {
             RIGHT: THREE.MOUSE.ROTATE
         }
         this.controls.touches = {
-            ONE: THREE.TOUCH.DOLLY_PAN,
-            TWO: THREE.TOUCH.ROTATE
+            ONE: THREE.TOUCH.PAN,
+            TWO: THREE.TOUCH.DOLLY_ROTATE
         }
 
         //Debug
