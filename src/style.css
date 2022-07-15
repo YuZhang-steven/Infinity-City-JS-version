@@ -17,6 +17,10 @@ p {
     font-family: 'Roboto', sans-serif;
 }
 
+.html {
+    height: auto;
+}
+
 
 /* three.js canvers setting */
 .webgl {
@@ -80,25 +84,25 @@ p {
 /* The Modal (background) */
 .modal {
     /* flex box setting */
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
 
-    visibility: hidden;
     /* Hidden by default */
     position: absolute;
     /* Stay in place */
     z-index: 1;
     /* Sit on top */
     padding-top: 100px;
+    padding: auto;
     /* Location of the box */
     left: 0;
     top: 0;
     width: 100%;
     /* Full width */
-    height: 100vh;
+    height: 100%;
     /* Full height */
-    /* overflow: auto; */
+    /* overflow: visible; */
     /* Enable scroll if needed */
 
     background-color: rgba(255, 255, 255, 0.8);
@@ -111,7 +115,7 @@ p {
 
 /*show modal*/
 .modal.show {
-    visibility: visible;
+    display: flex;
     opacity: 1;
     transition: opacity 0.5s ease-in, visibility 0s ease-in 0s;
 }
