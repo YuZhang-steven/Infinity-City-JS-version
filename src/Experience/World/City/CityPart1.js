@@ -74,6 +74,7 @@ export default class CityPart1 {
                     child.material = waterMaterial
                     this.modelInstance = new THREE.InstancedMesh(child.geometry, waterMaterial, this.num_instances)
                 } else {
+
                     child.material = cityMaterial
                     this.modelInstance = new THREE.InstancedMesh(child.geometry, cityMaterial, this.num_instances)
                 }

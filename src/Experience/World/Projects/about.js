@@ -51,6 +51,7 @@ export default class About {
 
         this.model.traverse((child) => {
             if (child instanceof THREE.Mesh) {
+
                 //add Material
                 child.material = material
 

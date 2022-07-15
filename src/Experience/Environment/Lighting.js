@@ -19,7 +19,7 @@ export default class Lighting {
 
     //initiate ambient light
     setAmbientLight() {
-        this.ambientLight = new THREE.AmbientLight(0xffffff, 0.3)
+        this.ambientLight = new THREE.AmbientLight(0xffffff, 1.5)
         this.scene.add(this.ambientLight)
 
         // Debug
@@ -35,12 +35,12 @@ export default class Lighting {
     }
 
     setSunLight() {
-        this.sunLight = new THREE.DirectionalLight('#ffffff', 1)
+        this.sunLight = new THREE.DirectionalLight('#ffffff', 3.5)
         this.sunLight.castShadow = false
         this.sunLight.shadow.camera.far = 15
         this.sunLight.shadow.mapSize.set(1024, 1024)
         this.sunLight.shadow.normalBias = 0.05
-        this.sunLight.position.set(3.5, 2, - 1.25)
+        this.sunLight.position.set(-0.5, 0.5, - 1)
         this.scene.add(this.sunLight)
 
         // Debug

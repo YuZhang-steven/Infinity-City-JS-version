@@ -14,8 +14,8 @@ export default class ProjectMatAssign {
 
         //product color setting
         this.basicColor = 0xffffff
-        this.specialColor = 0xff0000
-        this.cgColor = 0xE7670F
+        this.specialColor = 0x009dfb
+        this.cgColor = 0x9b6213
         this.archColor = 0xff00ff
         this.programingColor = 0xffff00
         this.productColor = 0x0000ff
@@ -95,8 +95,8 @@ export default class ProjectMatAssign {
     colorDebug() {
         const debugColor = {}
         debugColor.emptyColor = '#ffffff'
-        debugColor.specialColor = '#ffffff'
-        debugColor.computer_graphicColor = '#ffffff'
+        debugColor.specialColor = '#9b6213'
+        debugColor.computer_graphicColor = '#ad5b01'
         debugColor.architectureColor = '#ffffff'
         debugColor.programingColor = '#ffffff'
         debugColor.productColor = '#ffffff'

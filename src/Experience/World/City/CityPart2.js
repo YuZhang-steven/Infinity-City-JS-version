@@ -68,12 +68,14 @@ export default class CityPart2 {
                 //add material to different model part and create instance model
                 if (child.name.startsWith("road") || child.name.startsWith("lot")) {
                     child.material = roadMaterial
+
                     this.modelInstance = new THREE.InstancedMesh(child.geometry, roadMaterial, this.num_instances)
                 } else if (child.name.startsWith("water")) {
                     child.material = waterMaterial
                     this.modelInstance = new THREE.InstancedMesh(child.geometry, waterMaterial, this.num_instances)
                 } else {
                     child.material = cityMaterial
+
                     this.modelInstance = new THREE.InstancedMesh(child.geometry, cityMaterial, this.num_instances)
                 }
                 //add instance to the scene
