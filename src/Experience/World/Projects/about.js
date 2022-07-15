@@ -5,11 +5,11 @@ import LocationCalculation from '../../Utils/LocationCalculation'
 
 
 
-export default class meshEditor {
+export default class About {
     constructor() {
         //project information
-        this.projectType = "computer_graphic"
-        this.projectName = "meshEditor"
+        this.projectType = "special"
+        this.projectName = "about"
 
         //basic Information
         this.experience = new Experience()
@@ -22,23 +22,17 @@ export default class meshEditor {
         this.modalPage = this.experience.modalPage
 
 
-
-        //shader uniforms
-        this.customUniform = {
-            uTime: { value: 0 }
-        }
-
-
         //instance copy information
         this.instances = []
         this.num_instances = 3
         this.center = new THREE.Vector3()
 
         //model file location
-        this.projectModel = this.resources.items.meshEditor
+        this.projectModel = this.resources.items.about
 
         //setting model call
         this.setModel()
+        //this.setAnimation()
     }
 
     /*
@@ -51,58 +45,17 @@ export default class meshEditor {
         const material = this.matAssign.getMaterial(this.projectType)
         const color_ori = material.color.getHex()
 
-        //change shader parameters for animation 
-        const material_cube = this.matAssign.getMaterial(this.projectType)
-
-
-        material_cube.onBeforeCompile = (shader) => {
-            shader.uniforms.uTime = this.customUniform.uTime
-            shader.vertexShader = shader.vertexShader.replace(
-                '#include <common>',
-                `
-                    #include <common>
-
-                    uniform float uTime;
-
-                    mat2 get2dRotationMatrix(float _angle){
-                        return mat2(cos(_angle), -sin(_angle), sin(_angle), cos(_angle));
-                    }
-                `
-
-            )
-            shader.vertexShader = shader.vertexShader.replace(
-                '#include <begin_vertex>',
-                `
-                    #include <begin_vertex>
-
-                    float angle = sin(position.y * uTime) * 0.6 + uTime * 0.02;
-                    mat2 rotateMatrix = get2dRotationMatrix(angle);
-
-                    transformed.xz = rotateMatrix * transformed.xz;
-
-                `
-
-            )
-
-        }
-
 
         //event manager monitor array:check if the object already in a event situation
         let objectsHover = []
 
         this.model.traverse((child) => {
-            //console.log(child)
             if (child instanceof THREE.Mesh) {
                 //add Material
-                if (child.name.startsWith("Cube")) {
-                    child.material = material_cube
-                }
-                else {
-                    child.material = material
-                }
+                child.material = material
 
                 //create instance
-                this.modelInstance = new THREE.InstancedMesh(child.geometry, child.material, this.num_instances)
+                this.modelInstance = new THREE.InstancedMesh(child.geometry, material, this.num_instances)
 
                 //add instance to the scene
                 this.scene.add(this.modelInstance)
@@ -123,16 +76,15 @@ export default class meshEditor {
                 this.interactionManager.add(child)
 
                 child.addEventListener('mouseover', (event) => {
+
                     if (!objectsHover.includes(event.target)) {
                         material.color.set(0xffffff)
-                        material_cube.color.set(0xffffff)
                         objectsHover.push(event.target)
                     }
                 })
                 child.addEventListener('mouseout', (event) => {
                     if (objectsHover.includes(event.target)) {
                         material.color.set(color_ori)
-                        material_cube.color.set(color_ori)
                         objectsHover.pop()
                     }
                 })
@@ -141,6 +93,7 @@ export default class meshEditor {
                         this.modalPage.setModal(this.projectName)
                     }
                 })
+
 
             }
 
@@ -156,6 +109,6 @@ export default class meshEditor {
         this.animation.action.play()
     }
     update() {
-        this.customUniform.uTime.value = this.time.elapsed * 0.01
+        this.animation.mixer.update(this.time.delta * 0.0001)
     }
 }

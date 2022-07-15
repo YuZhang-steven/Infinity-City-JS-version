@@ -10,6 +10,7 @@ import Fox from './Fox.js'
 import ClothSimulation from './Projects/ClothSimulation.js'
 import Fog from '../Environment/Fog.js'
 import meshEditor from './Projects/MeshEditor.js'
+import About from './Projects/about.js'
 
 
 export default class World {
@@ -32,6 +33,7 @@ export default class World {
 
             this.clothsimulation = new ClothSimulation()
             this.meshEditor = new meshEditor()
+            this.about = new About()
 
 
             this.lighting = new Lighting()

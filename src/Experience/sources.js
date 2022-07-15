@@ -107,6 +107,17 @@ export default [
         type: 'gltfModel',
         path: 'models/Projects/meshEditor.glb'
     },
+    {
+        name: 'about',
+        type: 'gltfModel',
+        path: 'models/Projects/name.glb'
+    },
+    {
+        name: 'contact',
+        type: 'gltfModel',
+        path: 'models/Projects/contact.glb'
+    },
+
 
 
 ]
