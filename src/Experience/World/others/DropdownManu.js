@@ -4,7 +4,7 @@ export default class DropdownManu {
         this.button = document.getElementsByClassName("dropbtn")[0]
         this.projectsTypes = document.getElementsByClassName("project_collection")
 
-        console.log(this.projectsTypes)
+
 
         this.about_btn = document.getElementById("manu_about")
         this.contact_btn = document.getElementById("manu_contact")
