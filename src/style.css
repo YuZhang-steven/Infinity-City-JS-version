@@ -286,3 +286,88 @@ p {
     color: rgba(0, 0, 0, 0.75);
     overflow: auto;
 }
+
+
+
+/* Dropdown Manu */
+
+/* Basic Dropdown button circle*/
+/*location of the whole dropdown(button and links)*/
+.dropdown {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    bottom: 10px;
+    right: 10px;
+
+    position: fixed;
+
+
+}
+
+.dropbtn {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px #0000004b;
+
+    margin: 4px 2px;
+    padding: 20px 20px;
+    border: none;
+    /* change cursor shape to pointer in dropbtn */
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
+/*Dropdown button hover and click effect*/
+.dropbtn:hover {
+    background-color: rgb(255, 255, 255);
+    /* padding: 25px; */
+}
+
+
+.myDropdown {
+    display: none;
+    font-size: 12px;
+
+    bottom: 60px;
+    right: 10px;
+    position: relative;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 0;
+
+    user-select: none;
+}
+
+
+
+/*Change color of dropdown links when hovering, pseudo-class*/
+.dropdown-content :hover,
+.project_collection:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-weight: 900;
+    font-style: italic;
+}
+
+.dropdown-content {
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    padding: 2px 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.project_collection {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 100;
+    padding: 2px 10px 2px 30px;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/*show the dropdown menu(JS)*/
+.drop-show {
+    display: block;
+}

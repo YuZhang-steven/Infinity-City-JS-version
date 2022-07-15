@@ -15,6 +15,7 @@ import ProjectMatAssign from './Utils/ProjectMatAssign.js'
 import Modal from './Modal/Modal.js'
 import ProjectPath from './Utils/path.js'
 import LoadingPage from './World/others/LoadingPage.js'
+import DropdownManu from './World/others/DropdownManu.js'
 
 let instance = null
 
@@ -34,6 +35,9 @@ export default class Experience {
 
         //loading page
         this.loadPage = new LoadingPage()
+
+        //dropdownManu
+        this.dropdownManu = new DropdownManu()
 
         // Setup
         this.debug = new Debug()
