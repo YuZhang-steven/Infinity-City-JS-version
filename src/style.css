@@ -17,9 +17,7 @@ p {
     font-family: 'Roboto', sans-serif;
 }
 
-.html {
-    height: auto;
-}
+
 
 
 /* three.js canvers setting */
@@ -94,16 +92,13 @@ p {
     z-index: 1;
     /* Sit on top */
     padding-top: 100px;
+    padding-bottom: 100px;
     padding: auto;
     /* Location of the box */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    /* overflow: visible; */
-    /* Enable scroll if needed */
+
 
     background-color: rgba(255, 255, 255, 0.8);
     /* Black w/ opacity */
