@@ -38,6 +38,36 @@ export default class DropdownManu {
 
         }
 
+        for (let item of this.projectsTypes) {
+            if (item.id === "project_cg") {
+
+                item.onclick = () => {
+                    this.experience.matAssign.highLighting("computer_graphic")
+                }
+            }
+            else if (item.id === "all") {
+
+                item.onclick = () => {
+                    this.experience.matAssign.setColorBack()
+                }
+            } else if (item.id === "project_arch") {
+
+                item.onclick = () => {
+                    this.experience.matAssign.highLighting("architecture")
+                }
+            } else if (item.id === "project_prog") {
+
+                item.onclick = () => {
+                    this.experience.matAssign.highLighting("programing")
+                }
+            } else if (item.id === "project_prod") {
+
+                item.onclick = () => {
+                    this.experience.matAssign.highLighting("product")
+                }
+            }
+        }
+
 
     }
 }

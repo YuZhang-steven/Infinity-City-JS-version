@@ -54,7 +54,7 @@ export default class ProjectMatAssign {
 
     //set one type of project to have  type color and other types have basic color
     highLighting(type) {
-        //console.log("1")
+        console.log("1")
         for (const item of this.material_projects.entries()) {
             //console.log(item)
             if (item[0] !== type) {
@@ -70,6 +70,7 @@ export default class ProjectMatAssign {
     }
 
     setColorBack() {
+        console.log("2")
         for (const item of this.material_projects.entries()) {
 
             for (let i of item[1]) {
