@@ -38,12 +38,11 @@ p {
     color: rgb(255, 255, 255);
     text-shadow: 0 0 10px #0000004b;
 
-
-
     position: absolute;
     width: fit-content;
     margin: 1%;
     z-index: 0;
+    user-select: none;
 
 }
 

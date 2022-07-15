@@ -21,6 +21,7 @@ export default class Camera {
 
         this.setInstance()
         this.setControls()
+
     }
 
     setInstance() {
@@ -38,9 +39,15 @@ export default class Camera {
         this.controls.minPolarAngle = Math.PI / 8
         this.controls.rotateSpeed = 0.2
         this.controls.panSpeed = 1
-        //this.controls.maxAzimuthAngle = 1.2 * Math.PI
-        //this.controls.minAzimuthAngle = Math.PI
-        //this.controls.target = new THREE.Vector3(2, 1, 1)
+        this.controls.mouseButtons = {
+            LEFT: THREE.MOUSE.PAN,
+            MIDDLE: THREE.MOUSE.DOLLY,
+            RIGHT: THREE.MOUSE.ROTATE
+        }
+        this.controls.touches = {
+            ONE: THREE.TOUCH.DOLLY_PAN,
+            TWO: THREE.TOUCH.ROTATE
+        }
 
         //Debug
         if (this.debug.active) {
