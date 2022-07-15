@@ -91,7 +91,7 @@ export default class About {
                 })
                 child.addEventListener('mousedown', (event) => {
                     if (objectsHover.includes(event.target)) {
-                        this.modalPage.setModal(this.projectName)
+                        this.experience.aboutPage.setModal()
                     }
                 })
 
