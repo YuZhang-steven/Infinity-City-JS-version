@@ -15,6 +15,8 @@ import Contact from './Projects/Contact.js'
 import BYOW from './Projects/BYOW.js'
 import ClifPavilion from './Projects/ClifPavilion.js'
 import ColorWheel from './Projects/ColorWheel.js'
+import Resterizer from './Projects/Resterizer.js'
+import PlasticScape from './Projects/PlasticScape.js'
 
 
 export default class World {
@@ -41,6 +43,8 @@ export default class World {
             this.byow = new BYOW()
             this.clifPavilion = new ClifPavilion()
             this.colorWheel = new ColorWheel()
+            this.resterizer = new Resterizer()
+            this.plasticScape = new PlasticScape()
 
 
             this.lighting = new Lighting()

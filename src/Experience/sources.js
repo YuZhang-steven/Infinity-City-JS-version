@@ -127,6 +127,18 @@ export default [
         type: 'gltfModel',
         path: 'models/Projects/colorWheel.glb'
     },
+    {
+        name: 'plasticScape',
+        type: 'gltfModel',
+        path: 'models/Projects/plasticScape.glb'
+    },
+    {
+        name: 'resterizer',
+        type: 'gltfModel',
+        path: 'models/Projects/resterizer.glb'
+    },
+
+
 
 
 
