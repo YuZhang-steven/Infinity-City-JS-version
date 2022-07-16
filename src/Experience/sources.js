@@ -33,11 +33,6 @@ export default [
         path: 'textures/hdrmap/small_hangar_01_1k.hdr'
     },
     {
-        name: 'colorWheel',
-        type: 'gltfModel',
-        path: 'models/colorWheel/ColorWheel.glb'
-    },
-    {
         name: 'cityPart1',
         type: 'gltfModel',
         path: 'models/city/cityPart01.glb'
@@ -116,6 +111,21 @@ export default [
         name: 'contact',
         type: 'gltfModel',
         path: 'models/Projects/contact.glb'
+    },
+    {
+        name: 'BYOW',
+        type: 'gltfModel',
+        path: 'models/Projects/BYOW.glb'
+    },
+    {
+        name: 'clifPavilion',
+        type: 'gltfModel',
+        path: 'models/Projects/clifPavilion.glb'
+    },
+    {
+        name: 'colorWheel',
+        type: 'gltfModel',
+        path: 'models/Projects/colorWheel.glb'
     },
 
 

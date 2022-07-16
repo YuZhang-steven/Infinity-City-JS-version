@@ -16,9 +16,9 @@ export default class ProjectMatAssign {
         this.basicColor = 0xffffff
         this.specialColor = 0x009dfb
         this.cgColor = 0x9b6213
-        this.archColor = 0xff00ff
-        this.programingColor = 0xffff00
-        this.productColor = 0x0000ff
+        this.archColor = 0x09d73d
+        this.programingColor = 0xd30101
+        this.productColor = 0xe62fff
 
         // Debug
         if (this.debug.active) {
@@ -97,9 +97,9 @@ export default class ProjectMatAssign {
         debugColor.emptyColor = '#ffffff'
         debugColor.specialColor = '#9b6213'
         debugColor.computer_graphicColor = '#ad5b01'
-        debugColor.architectureColor = '#ffffff'
-        debugColor.programingColor = '#ffffff'
-        debugColor.productColor = '#ffffff'
+        debugColor.architectureColor = '#09d73d'
+        debugColor.programingColor = '#d30101'
+        debugColor.productColor = '#e62fff'
 
 
         this.debugFolder

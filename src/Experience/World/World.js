@@ -12,6 +12,9 @@ import Fog from '../Environment/Fog.js'
 import meshEditor from './Projects/MeshEditor.js'
 import About from './Projects/About.js'
 import Contact from './Projects/Contact.js'
+import BYOW from './Projects/BYOW.js'
+import ClifPavilion from './Projects/ClifPavilion.js'
+import ColorWheel from './Projects/ColorWheel.js'
 
 
 export default class World {
@@ -24,7 +27,6 @@ export default class World {
         this.resources.on('ready', () => {
             // Setup
 
-            //this.colorWheel = new ColorWheel()
             //this.fox = new Fox()
 
             this.city1 = new CityPart1()
@@ -36,6 +38,9 @@ export default class World {
             this.meshEditor = new meshEditor()
             this.about = new About()
             this.contact = new Contact()
+            this.byow = new BYOW()
+            this.clifPavilion = new ClifPavilion()
+            this.colorWheel = new ColorWheel()
 
 
             this.lighting = new Lighting()
@@ -55,5 +60,9 @@ export default class World {
             this.clothsimulation.update()
         if (this.meshEditor)
             this.meshEditor.update()
+        if (this.byow)
+            this.byow.update()
+        if (this.clifPavilion)
+            this.clifPavilion.update()
     }
 }
