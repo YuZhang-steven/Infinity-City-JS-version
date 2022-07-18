@@ -17,6 +17,7 @@ import ClifPavilion from './Projects/ClifPavilion.js'
 import ColorWheel from './Projects/ColorWheel.js'
 import Resterizer from './Projects/Resterizer.js'
 import PlasticScape from './Projects/PlasticScape.js'
+import PathTracer from './Projects/PathTracer.js'
 
 
 export default class World {
@@ -45,6 +46,7 @@ export default class World {
             this.colorWheel = new ColorWheel()
             this.resterizer = new Resterizer()
             this.plasticScape = new PlasticScape()
+            this.pathTracer = new PathTracer()
 
 
             this.lighting = new Lighting()
@@ -68,5 +70,7 @@ export default class World {
             this.byow.update()
         if (this.clifPavilion)
             this.clifPavilion.update()
+        if (this.pathTracer)
+            this.pathTracer.update()
     }
 }

@@ -18,6 +18,10 @@ import '../../../static/others/github-50.png'
 import '../../../static/others/instagram-50.png'
 import '../../../static/others/linkedin-50.png'
 
+import '../../../static/others/frontPage.jpg'
+import '../../../static/others/Zi16x16.png'
+import '../../../static/others/Zi32x32.png'
+
 
 
 export default class ProjectPath {
@@ -134,7 +138,7 @@ export default class ProjectPath {
             "about", [
             {
                 type: "photo",
-                text: "CLOTH SIMULATION",
+                text: "photo1",
                 path: '/assets/img/photos1.jpg'
             },
             {
@@ -156,6 +160,25 @@ export default class ProjectPath {
                 name: 'linkedin',
                 type: 'icon',
                 path: '/assets/img/linkedin-50.png'
+            },
+        ]
+        )
+        this.pathMap.set(
+            "others", [
+            {
+                type: "photo",
+                text: "frontPage",
+                path: '/assets/img/frontPage.jpg'
+            },
+            {
+                type: "photo",
+                text: "icon16x16.png",
+                path: '/assets/img/Zi16x16.png'
+            },
+            {
+                type: "photo",
+                text: "icon32x32.png",
+                path: '/assets/img/Zi16x16.png'
             },
         ]
         )

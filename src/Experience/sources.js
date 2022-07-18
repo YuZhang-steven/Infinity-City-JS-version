@@ -137,6 +137,11 @@ export default [
         type: 'gltfModel',
         path: 'models/Projects/resterizer.glb'
     },
+    {
+        name: 'pathTracer',
+        type: 'gltfModel',
+        path: 'models/Projects/pathTracer.glb'
+    },
 
 
 
