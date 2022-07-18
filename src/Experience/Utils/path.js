@@ -5,12 +5,12 @@ import '../../../static/projects/meshEditor/meshEditor004.PNG'
 import '../../../static/projects/meshEditor/meshEditor005.PNG'
 
 import '../../../static/projects/clothSimulation/clothSimulation001.PNG'
-import '../../../static/projects/clothSimulation/clothSimulation002.PNG'
-import '../../../static/projects/clothSimulation/clothSimulation003.PNG'
-import '../../../static/projects/clothSimulation/clothSimulation004.PNG'
-import '../../../static/projects/clothSimulation/clothSimulation005.PNG'
-import '../../../static/projects/clothSimulation/clothSimulation006.PNG'
-import '../../../static/projects/clothSimulation/clothSimulation007.PNG'
+import '../../../static/projects/clothSimulation/clothSimulation002.jpg'
+import '../../../static/projects/clothSimulation/clothSimulation003.jpg'
+import '../../../static/projects/clothSimulation/clothSimulation004.jpg'
+import '../../../static/projects/clothSimulation/clothSimulation005.jpg'
+import '../../../static/projects/clothSimulation/clothSimulation006.jpg'
+
 
 import '../../../static/others/photos1.jpg'
 import '../../../static/others/anti-wechat-50.png'
@@ -85,35 +85,32 @@ export default class ProjectPath {
             "clothSimulationImg",
             [
                 {
-                    name: 'Curve01',
+                    name: 'Fabric with Wind',
                     type: 'picture',
                     path: '/assets/img/clothSimulation001.PNG'
                 },
                 {
-                    name: 'picture03',
+                    name: 'Cloth Structure System',
                     type: 'picture',
-                    path: '/assets/img/clothSimulation002.PNG'
-                }, {
-                    name: 'picture04',
-                    type: 'picture',
-                    path: '/assets/img/clothSimulation003.PNG'
+                    path: '/assets/img/clothSimulation002.jpg'
                 },
                 {
-                    name: 'picture05',
+                    name: 'Gravity Simulation via Numerical Integration',
                     type: 'picture',
-                    path: '/assets/img/clothSimulation004.PNG'
+                    path: '/assets/img/clothSimulation003.jpg'
+                },
+                {
+                    name: 'Collision with Other Geometries',
+                    type: 'picture',
+                    path: '/assets/img/clothSimulation004.jpg'
                 }, {
-                    name: 'picture06',
+                    name: 'Shader System',
                     type: 'picture',
-                    path: '/assets/img/clothSimulation005.PNG'
+                    path: '/assets/img/clothSimulation005.jpg'
                 }, {
-                    name: 'picture07',
+                    name: 'Wind Simulation',
                     type: 'picture',
-                    path: '/assets/img/clothSimulation006.PNG'
-                }, {
-                    name: 'picture08',
-                    type: 'picture',
-                    path: '/assets/img/clothSimulation007.PNG'
+                    path: '/assets/img/clothSimulation006.jpg'
                 },
 
             ]
