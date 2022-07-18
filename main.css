@@ -1,0 +1,427 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic Font */
+h1 {
+    font-family: 'Rufina', serif;
+    font-feature-settings: "c2sc", "smcp";
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+/* three.js canvers setting */
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* unchange elements */
+#title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 4vw;
+    font-weight: 400;
+    font-display: swap;
+
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px #0000004b;
+
+    position: absolute;
+    width: fit-content;
+    margin: 1%;
+    z-index: 0;
+    user-select: none;
+
+}
+
+/* Loading page */
+#loading_page {
+    display: block;
+    opacity: 1;
+}
+
+#loading_cover {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 249, 239);
+}
+
+#loading_bar {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: top left;
+}
+
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+    /* flex box setting */
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    /* Hidden by default */
+    position: absolute;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding: auto;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Black w/ opacity */
+
+    opacity: 0;
+    transition: opacity 0.5s ease-in, visibility 0s ease-in 0.5s;
+
+}
+
+/*show modal*/
+.modal.show {
+    display: flex;
+    opacity: 1;
+    transition: opacity 0.5s ease-in, visibility 0s ease-in 0s;
+}
+
+/* The Close Button */
+#model_close {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 24px;
+
+    font-weight: 100;
+    transition: 0.4s;
+}
+
+#model_close:hover,
+#model_close:focus {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* whole slides area */
+#slides_box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    max-width: 700px;
+    width: fit-content;
+}
+
+/* Number text (1/3 etc) */
+.slide_numtext {
+    display: block;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    padding: 8px 12px;
+    padding-left: 35px;
+    position: relative;
+
+    left: 10%;
+
+
+}
+
+#slidewithbutton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: fit-content;
+}
+
+/*individual slide*/
+#modal_image {
+    z-index: 2;
+    margin: auto;
+    display: block;
+    width: fit-content;
+    max-width: 700px;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    transition: ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Next & previous buttons */
+.slides_button {
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    cursor: pointer;
+    position: relative;
+
+    width: auto;
+    padding: 16px;
+    color: rgba(0, 0, 0, 0.425);
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+#prev_button:hover,
+#next_button:hover {
+    color: #000000;
+}
+
+/* Caption of Modal Image, Same Width as the Image */
+#slide_caption {
+    font-size: 15px;
+    position: relative;
+    margin-top: 10px;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    height: fit-content;
+    color: rgba(0, 0, 0, 0.788);
+}
+
+
+/*100% Image width on Smaller Screens*/
+@media only screen and (max-width: 700px) {
+    .mySlides {
+        width: 100%;
+    }
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 10px 2px;
+    background-color: rgba(0, 0, 0, 0.274);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: rgba(0, 0, 0, 0.082);
+}
+
+/* Project Title */
+#project_name {
+    margin: 20px 2px 10px 2px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 15px;
+}
+
+/* Project type */
+#project_type {
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0px 2px 20px 2px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+/* Project Intro */
+#project_text {
+    margin: 0px 20%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.75);
+    overflow: visible;
+}
+
+
+
+/* Dropdown Manu */
+
+/* Basic Dropdown button circle*/
+/*location of the whole dropdown(button and links)*/
+.dropdown {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    bottom: 10px;
+    right: 10px;
+
+    position: fixed;
+
+
+}
+
+.dropbtn {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px #0000004b;
+
+    margin: 4px 2px;
+    padding: 20px 20px;
+    border: none;
+    /* change cursor shape to pointer in dropbtn */
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
+/*Dropdown button hover and click effect*/
+.dropbtn:hover {
+    background-color: rgb(255, 255, 255);
+    /* padding: 25px; */
+}
+
+
+.myDropdown {
+    display: none;
+    font-size: 12px;
+
+    bottom: 60px;
+    right: 10px;
+    position: relative;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 0;
+
+    user-select: none;
+}
+
+
+
+/*Change color of dropdown links when hovering, pseudo-class*/
+.dropdown-content :hover,
+.project_collection:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-weight: 900;
+    font-style: italic;
+}
+
+.dropdown-content {
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    padding: 2px 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.project_collection {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 100;
+    padding: 2px 10px 2px 30px;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/*show the dropdown menu(JS)*/
+.drop-show {
+    display: block;
+}
+
+/*About Page*/
+#about_box {
+    display: flex;
+    flex-flow: row
+}
+
+@media only screen and (max-width: 700px) {
+    #about_box {
+        flex-flow: column;
+        align-items: center;
+
+    }
+
+    #social1 {
+        max-width: 160px;
+        justify-content: space-evenly;
+    }
+
+    #selfintro {
+        padding: 8%
+    }
+}
+
+#selfandcontact {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+}
+
+#mail1 {
+    padding: 6% 0 10% 0;
+    font-weight: 700;
+    font-size: 15px;
+    opacity: 0.6;
+}
+
+#photo1 {
+    width: 30%;
+    opacity: 0.8;
+}
+
+#social1 {
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.7;
+}
+
+#selfintro {
+    opacity: 0.7;
+    font-size: 15px;
+}
+
+/*# sourceMappingURL=main.css.map*/
