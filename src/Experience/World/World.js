@@ -6,7 +6,6 @@ import CityPart4 from './City/CityPart4.js'
 //import ColorWheel from './colorWheel.js'
 import Lighting from '../Environment/Lighting.js'
 
-import Fox from './Fox.js'
 import ClothSimulation from './Projects/ClothSimulation.js'
 import Fog from '../Environment/Fog.js'
 import meshEditor from './Projects/MeshEditor.js'
@@ -29,8 +28,6 @@ export default class World {
         // Wait for resources
         this.resources.on('ready', () => {
             // Setup
-
-            //this.fox = new Fox()
 
             this.city1 = new CityPart1()
             this.city2 = new CityPart2()

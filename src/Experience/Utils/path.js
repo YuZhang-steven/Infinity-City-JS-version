@@ -126,7 +126,7 @@ export default class ProjectPath {
             },
             {
                 type: "intro",
-                text: "In this project, I implement a simulation system to simulate the movement of cloth. The system represent cloth as a grid that was composed with point mass and also springs. The system itself also includes gravity, friction, the other collide geometries and also self-collision on the cloth. I also add some basic shades for the geometries using GLSL shader programs, so the simulation scene can render materials real time. "
+                text: "A C++ simulation system to simulate the movement of the cloth. The system represents cloth as grids with the mass on each point and spring on each line. The system can simulate gravity, friction, and collisions with other geometries. There are also basic shaders coded with GLSL to allow the simulation scene to be rendered in real-time. "
             },
             {
                 type: "type",
