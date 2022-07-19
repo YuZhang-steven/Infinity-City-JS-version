@@ -36,7 +36,7 @@ export default class ModalContact {
 
         //insert Email
         html = `
-         <p>yustevenzhang@gmail.com</p>
+         <p>yustevenzhang.info@gmail.com</p>
         `
         document.getElementById("mail1").insertAdjacentHTML("beforeend", html)
 
@@ -67,11 +67,53 @@ export default class ModalContact {
 
         //insert self intro
         html = `
-         <p>I am Steven Zhang. First: Thanks for waiting long time for this website loading. 
+         <p>Hi, I am Yu Zhang(张钰). I know my name is hard to pronounce, so I introduce myself as Steven usually. 
+         First, thanks for waiting a long time for this website to load. 
+         Some people would argue a website like this, is not effective to convey information or 
+         optimize performance from both design and engineering perspectives. 
+         However, I imagine you also have a dream to click and explore a miniature city, just like me. 
+         I know it because I have seen so many adults fully focused on the models in the Lego store 
+         and others have so much fun in Disney land. 
+         You can't wait 10s for Google to load your answer today, but I bet you don't mind waiting longer for this web toy to load. 
+         This is the way I approach design. Before finding the solutions to a goal, always try to read the goal in different ways.
          
          </p>
         `
         document.getElementById("selfintro").insertAdjacentHTML("beforeend", html)
+
+        html = `
+         <p>Trying to create something playful is my aim these years. 
+         It is not easy to achieve usually.
+         Most time my art and design background will drag me to those elegant and eye-catching stereotypes. 
+         They are everywhere in our daily life. 
+         I guess the industry in the USA has already formed a system to produce those elegant designs in an efficient pipeline. 
+         But it is still hard to produce playful designs in the same efficient way t. 
+         So, I decide to make my portfolio website like a toy I want to play with.
+         
+         </p>
+        `
+        document.getElementById("selfintro").insertAdjacentHTML("beforeend", html)
+
+        html = `
+         <p>This website is not intended to show how good I am at coding or web design. 
+         It is the first website I have made, so I don't think I can show high levels in those tools I used. 
+         I like to try new tools and new media to express my idea. 
+         They really inspire me to think about design in a new dimension. 
+         But I don't think the performance of a media or a tool should become the only goal of any design(Yes, I read books by Robin Evans).
+         </p>
+        `
+        document.getElementById("selfintro").insertAdjacentHTML("beforeend", html)
+
+        html = `
+         <p>If you want to know about my experience of skills, you would directly click Linkedin; 
+         if you want to know about my personal life, you will search my IG or Facebook. 
+         Therefore, I decided to write something meaningful for people who would like to read, 
+         rather than, wasting their time with those IG tag paragraphs. 
+         Anyway, Free to contact me with any questions.
+         </p>
+        `
+        document.getElementById("selfintro").insertAdjacentHTML("beforeend", html)
+
 
         this.modal.classList.add("show")
 
