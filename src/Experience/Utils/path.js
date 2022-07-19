@@ -1,8 +1,8 @@
-import '../../../static/projects/meshEditor/meshEditor001.PNG'
-import '../../../static/projects/meshEditor/meshEditor002.PNG'
-import '../../../static/projects/meshEditor/meshEditor003.PNG'
-import '../../../static/projects/meshEditor/meshEditor004.PNG'
-import '../../../static/projects/meshEditor/meshEditor005.PNG'
+import '../../../static/projects/meshEditor/meshEditor001.jpg'
+import '../../../static/projects/meshEditor/meshEditor002.jpg'
+import '../../../static/projects/meshEditor/meshEditor003.jpg'
+import '../../../static/projects/meshEditor/meshEditor004.jpg'
+
 
 import '../../../static/projects/clothSimulation/clothSimulation001.PNG'
 import '../../../static/projects/clothSimulation/clothSimulation002.jpg'
@@ -40,29 +40,24 @@ export default class ProjectPath {
             "meshEditorImg",
             [
                 {
-                    name: 'Curve01',
+                    name: 'Bezier Curves and Surfaces',
                     type: 'picture',
-                    path: '/assets/img/meshEditor001.PNG'
+                    path: '/assets/img/meshEditor001.jpg'
                 },
                 {
-                    name: 'picture03',
+                    name: 'Half-Edge and Normal Sampling to enable smooth shading',
                     type: 'picture',
-                    path: '/assets/img/meshEditor002.PNG'
+                    path: '/assets/img/meshEditor002.jpg'
                 }, {
-                    name: 'picture04',
+                    name: 'Edge Flip and Split',
                     type: 'picture',
-                    path: '/assets/img/meshEditor003.PNG'
+                    path: '/assets/img/meshEditor003.jpg'
                 },
                 {
-                    name: 'picture05',
+                    name: 'Loop Subdivision For Mesh Upsampling',
                     type: 'picture',
-                    path: '/assets/img/meshEditor004.PNG'
-                }, {
-                    name: 'picture06',
-                    type: 'picture',
-                    path: '/assets/img/meshEditor005.PNG'
-                },
-
+                    path: '/assets/img/meshEditor004.jpg'
+                }
             ]
         )
         this.pathMap.set(
@@ -73,7 +68,7 @@ export default class ProjectPath {
             },
             {
                 type: "intro",
-                text: "We implement an editor with can show and change the Bezier Curves and Mesh Geometry. We use de Castelijau to represent Bezier curves and also Bezier surfaces. We also use a half-edge structure to store and manipulate the mesh. Through loop subdivision with flipping and splitting edges, the editor can upsample the meshed to get a smoother surface."
+                text: "In this project, mypartner Robert Qiu and I implemented an editor that can show and change theBezier Curves and Mesh Geometry. In Bezier curves part, de Casteljau'salgorithm is used to calculate curve shape. The half-edge structure is used tostore mesh data, so the edges on each surface can be deleted and added."
             },
             {
                 type: "type",
