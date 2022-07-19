@@ -33,6 +33,10 @@ export default class BYOW {
         //setting model call
         this.setModel()
         this.setAnimation()
+
+        if (window.location.hash === '#byow') {
+            this.directLink()
+        }
     }
 
     /*
@@ -122,5 +126,8 @@ export default class BYOW {
         this.animation.mixer02.update(this.time.delta * 0.0004)
         this.animation.mixer03.update(this.time.delta * 0.0004)
         this.animation.mixer04.update(this.time.delta * 0.0004)
+    }
+    directLink() {
+        this.modalPage.setModal(this.projectName)
     }
 }

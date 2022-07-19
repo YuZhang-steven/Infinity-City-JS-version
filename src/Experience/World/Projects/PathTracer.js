@@ -33,6 +33,14 @@ export default class PathTracer {
         //setting model call
         this.setModel()
         this.setAnimation()
+
+
+
+
+        if (window.location.hash === '#ray_tracer') {
+            this.directLink()
+        }
+
     }
 
     /*
@@ -129,5 +137,8 @@ export default class PathTracer {
         this.animation.mixer03.update(this.time.delta * 0.0004)
         this.animation.mixer04.update(this.time.delta * 0.0004)
         this.animation.mixer05.update(this.time.delta * 0.0004)
+    }
+    directLink() {
+        this.modalPage.setModal(this.projectName)
     }
 }

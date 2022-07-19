@@ -39,6 +39,10 @@ export default class Resterizer {
 
         //setting model call
         this.setModel()
+
+        if (window.location.hash === '#rasterizer') {
+            this.directLink()
+        }
     }
 
     /*
@@ -157,5 +161,8 @@ export default class Resterizer {
     }
     update() {
         this.customUniform.uTime.value = this.time.elapsed * 0.01
+    }
+    directLink() {
+        this.modalPage.setModal(this.projectName)
     }
 }

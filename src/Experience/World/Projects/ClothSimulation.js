@@ -33,6 +33,10 @@ export default class ClothSimulation {
         //setting model call
         this.setModel()
         this.setAnimation()
+
+        if (window.location.hash === '#clothSimulation') {
+            this.directLink()
+        }
     }
 
     /*
@@ -110,5 +114,8 @@ export default class ClothSimulation {
     }
     update() {
         this.animation.mixer.update(this.time.delta * 0.0001)
+    }
+    directLink() {
+        this.modalPage.setModal(this.projectName)
     }
 }

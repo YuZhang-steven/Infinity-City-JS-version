@@ -33,6 +33,10 @@ export default class ClifPavilion {
         //setting model call
         this.setModel()
         this.setAnimation()
+
+        if (window.location.hash === '#clifPavilion') {
+            this.directLink()
+        }
     }
 
     /*
@@ -110,5 +114,8 @@ export default class ClifPavilion {
     }
     update() {
         this.animation.mixer.update(this.time.delta * 0.0004)
+    }
+    directLink() {
+        this.modalPage.setModal(this.projectName)
     }
 }

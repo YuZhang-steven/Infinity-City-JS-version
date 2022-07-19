@@ -39,6 +39,10 @@ export default class meshEditor {
 
         //setting model call
         this.setModel()
+
+        if (window.location.hash === '#meshEditor') {
+            this.directLink()
+        }
     }
 
     /*
@@ -157,5 +161,8 @@ export default class meshEditor {
     }
     update() {
         this.customUniform.uTime.value = this.time.elapsed * 0.01
+    }
+    directLink() {
+        this.modalPage.setModal(this.projectName)
     }
 }

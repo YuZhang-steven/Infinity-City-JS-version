@@ -193,7 +193,7 @@ export default class ProjectPath {
             "pathTracerText", [
             {
                 type: "name",
-                text: "Ray Tracing Renderer"
+                text: "Ray Tracing Render"
             },
             {
                 type: "intro",

@@ -33,6 +33,10 @@ export default class ColorWheel {
         //setting model call
         this.setModel()
         this.setAnimation()
+
+        if (window.location.hash === '#colorWheel') {
+            this.directLink()
+        }
     }
 
     /*
@@ -110,5 +114,8 @@ export default class ColorWheel {
     }
     update() {
         this.animation.mixer.update(this.time.delta * 0.0004)
+    }
+    directLink() {
+        this.modalPage.setModal(this.projectName)
     }
 }

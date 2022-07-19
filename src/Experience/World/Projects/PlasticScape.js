@@ -39,6 +39,10 @@ export default class PlasticScape {
 
         //setting model call
         this.setModel()
+
+        if (window.location.hash === '#plasticScape') {
+            this.directLink()
+        }
     }
 
     /*
@@ -157,5 +161,8 @@ export default class PlasticScape {
     }
     update() {
         this.customUniform.uTime.value = this.time.elapsed * 0.01
+    }
+    directLink() {
+        this.modalPage.setModal(this.projectName)
     }
 }

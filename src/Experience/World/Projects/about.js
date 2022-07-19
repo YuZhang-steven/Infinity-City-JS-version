@@ -32,7 +32,10 @@ export default class About {
 
         //setting model call
         this.setModel()
-        //this.setAnimation()
+
+        if (window.location.hash === '#about') {
+            this.directLink()
+        }
     }
 
     /*
@@ -111,5 +114,8 @@ export default class About {
     }
     update() {
         this.animation.mixer.update(this.time.delta * 0.0001)
+    }
+    directLink() {
+        this.experience.aboutPage.setModal()
     }
 }

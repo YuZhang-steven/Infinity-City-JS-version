@@ -32,7 +32,11 @@ export default class Contact {
 
         //setting model call
         this.setModel()
-        //this.setAnimation()
+
+        if (window.location.hash === '#contact') {
+            this.directLink()
+        }
+
     }
 
     /*
@@ -111,5 +115,8 @@ export default class Contact {
     }
     update() {
         this.animation.mixer.update(this.time.delta * 0.0001)
+    }
+    directLink() {
+        this.experience.aboutPage.setModal()
     }
 }
