@@ -22,6 +22,20 @@ import '../../../static/projects/rasterizer/rasterizer002.jpg'
 import '../../../static/projects/rasterizer/rasterizer003.jpg'
 import '../../../static/projects/rasterizer/rasterizer004.jpg'
 
+import '../../../static/projects/BYOW/BYOW001.jpg'
+import '../../../static/projects/BYOW/BYOW002.jpg'
+import '../../../static/projects/BYOW/BYOW003.jpg'
+import '../../../static/projects/BYOW/BYOW004.jpg'
+
+import '../../../static/projects/colorWheel/colorWheel001.jpg'
+import '../../../static/projects/colorWheel/colorWheel002.jpg'
+import '../../../static/projects/colorWheel/colorWheel003.jpg'
+
+import '../../../static/projects/plasticScape/plasticScape001.jpg'
+import '../../../static/projects/plasticScape/plasticScape002.jpg'
+import '../../../static/projects/plasticScape/plasticScape003.jpg'
+import '../../../static/projects/plasticScape/plasticScape004.jpg'
+import '../../../static/projects/plasticScape/plasticScape005.jpg'
 
 
 
@@ -169,6 +183,22 @@ export default class ProjectPath {
 
             ]
         )
+        this.pathMap.set(
+            "pathTracerText", [
+            {
+                type: "name",
+                text: "Ray Tracing Renderer"
+            },
+            {
+                type: "intro",
+                text: "A C++ Raytracing render Engine. It uses the basicpath tracing algorithm to render the scene. The render uses BVH structure to optimize theray-triangle intersection time and can support GI and Adaptive Sampling. It canalso achieve the depth of field effect to simulate the physical camera focus point.The material can be microfacet material  "
+            },
+            {
+                type: "type",
+                text: "Computer Graphic"
+            },
+        ]
+        )
 
         this.pathMap.set(
             "rasterizerImg",
@@ -184,7 +214,7 @@ export default class ProjectPath {
                     path: '/assets/img/rasterizer002.jpg'
                 },
                 {
-                    name: '"Pixel sampling:Bilinear Sampling"',
+                    name: 'Pixel sampling:Bilinear Sampling',
                     type: 'picture',
                     path: '/assets/img/rasterizer003.jpg'
                 },
@@ -213,6 +243,91 @@ export default class ProjectPath {
             },
         ]
         )
+
+        this.pathMap.set(
+            "BYOWImg",
+            [
+                {
+                    name: 'Generating maze with random seeds',
+                    type: 'picture',
+                    path: '/assets/img/BYOW001.jpg'
+                },
+                {
+                    name: 'The plyer can only see part of the map',
+                    type: 'picture',
+                    path: '/assets/img/BYOW002.jpg'
+                },
+                {
+                    name: 'The map with "bridge building" and "deleting wall" chances',
+                    type: 'picture',
+                    path: '/assets/img/BYOW003.jpg'
+                },
+                {
+                    name: 'The Basic Logic to Generating Map',
+                    type: 'picture',
+                    path: '/assets/img/BYOW004.jpg'
+                },
+
+            ]
+        )
+
+        this.pathMap.set(
+            "BYOWText", [
+            {
+                type: "name",
+                text: "Build Your Own World"
+            },
+            {
+                type: "intro",
+                text: "The final project in CS61B Data Structure class. I use Java to design an algorithm that will generate a dungeon map by giving seeds. I also designed basic UI and also some interaction with the characters. "
+            },
+            {
+                type: "type",
+                text: "Other Programming"
+            },
+        ]
+        )
+
+        this.pathMap.set(
+            "colorWheelImg",
+            [
+                {
+                    name: 'Final Prototype',
+                    type: 'picture',
+                    path: '/assets/img/colorWheel001.jpg'
+                },
+                {
+                    name: 'Color-Sound Matching Table',
+                    type: 'picture',
+                    path: '/assets/img/colorWheel002.jpg'
+                },
+                {
+                    name: 'Model Diagram',
+                    type: 'picture',
+                    path: '/assets/img/colorWheel003.jpg'
+                }
+            ]
+        )
+
+        this.pathMap.set(
+            "colorWheelText", [
+            {
+                type: "name",
+                text: "Color Wheel"
+            },
+            {
+                type: "intro",
+                text: "Teamed with Elnaz Tafrihi and Shuang Yan, We try to design a new instrument that people can use color to play music. The color sensor on the instrument will detect the color on the disk and play the sound. People can change the combination of the color cube to compose the music.  Final product implemented with Arduino and C++. "
+            },
+            {
+                type: "type",
+                text: "Product"
+            },
+        ]
+        )
+
+
+
         this.pathMap.set(
             "about", [
             {
@@ -242,6 +357,63 @@ export default class ProjectPath {
             },
         ]
         )
+
+        this.pathMap.set(
+            "plasticScapeImg",
+            [
+                {
+                    name: 'Community Emergency Building Hub',
+                    type: 'picture',
+                    path: '/assets/img/plasticScape001.jpg'
+                },
+                {
+                    name: 'Drone Based Plastic Building',
+                    type: 'picture',
+                    path: '/assets/img/plasticScape002.jpg'
+                },
+                {
+                    name: 'Temporary Structure to Change LandScape',
+                    type: 'picture',
+                    path: '/assets/img/plasticScape003.jpg'
+                },
+                {
+                    name: 'Nature and Urban in Same Landscape',
+                    type: 'picture',
+                    path: '/assets/img/plasticScape004.jpg'
+                },
+                {
+                    name: 'Interior and Exterior Merging',
+                    type: 'picture',
+                    path: '/assets/img/plasticScape005.jpg'
+                }
+            ]
+        )
+
+        this.pathMap.set(
+            "plasticScapeText", [
+            {
+                type: "name",
+                text: "PLASTIC-SCAPE"
+            },
+            {
+                type: "intro",
+                text: `
+                More than 300 million tons of plastic are produced each year, of which only 18% are recycled. Our project suggests utilization of such unrated resources, approaching global warming as a chance to restore the balance between human living space and natural habitat of other species.
+                To achieve that, recycling plastics replace construction materials. A small recycling apparatus is installed in each community while other machines are used to remold plastic trash in a form that a drone-based 3d printer can use. From now on, these drones will take over construction of temporary infrastructures that will shape the dryland following the frequently occurring floods. As sea level is gradually rising, the infrastructure also will increase in height layer by layer. 
+                These plastic infrastructures will also serve as scaffolds for plants to grow. Soil and sand coming from the floods will deposit on the infrastructures supplying them with nutrients. As time passes, plants and plastic structures will form the new landscape and will reshape current city networks. Nature will intrude the originally isolated interiors of buildings while old man-made infrastructures will provide habitat for other species.
+                Rather than seeking to preserve the human living environment, the consequence of global warming might be a chance to invite nature into human infrastructure again. After many years of negotiation and reshaping, the human living space and nature will achieve a new balance.
+                `
+            },
+            {
+                type: "type",
+                text: "Architecture"
+            },
+        ]
+        )
+
+
+
+
         this.pathMap.set(
             "others", [
             {
