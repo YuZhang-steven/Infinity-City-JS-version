@@ -11,6 +11,19 @@ import '../../../static/projects/clothSimulation/clothSimulation004.jpg'
 import '../../../static/projects/clothSimulation/clothSimulation005.jpg'
 import '../../../static/projects/clothSimulation/clothSimulation006.jpg'
 
+import '../../../static/projects/pathTracer/pathTracer001.png'
+import '../../../static/projects/pathTracer/pathTracer002.jpg'
+import '../../../static/projects/pathTracer/pathTracer003.jpg'
+import '../../../static/projects/pathTracer/pathTracer004.jpg'
+import '../../../static/projects/pathTracer/pathTracer005.jpg'
+
+import '../../../static/projects/rasterizer/rasterizer001.jpg'
+import '../../../static/projects/rasterizer/rasterizer002.jpg'
+import '../../../static/projects/rasterizer/rasterizer003.jpg'
+import '../../../static/projects/rasterizer/rasterizer004.jpg'
+
+
+
 
 import '../../../static/others/photos1.jpg'
 import '../../../static/others/anti-wechat-50.png'
@@ -119,6 +132,80 @@ export default class ProjectPath {
             {
                 type: "intro",
                 text: "A C++ simulation system to simulate the movement of the cloth. The system represents cloth as grids with the mass on each point and spring on each line. The system can simulate gravity, friction, and collisions with other geometries. There are also basic shaders coded with GLSL to allow the simulation scene to be rendered in real-time. "
+            },
+            {
+                type: "type",
+                text: "Computer Graphic"
+            },
+        ]
+        )
+        this.pathMap.set(
+            "pathTracerImg",
+            [
+                {
+                    name: 'Render Result',
+                    type: 'picture',
+                    path: '/assets/img/pathTracer001.png'
+                },
+                {
+                    name: 'BVH Structure and Normal Rendering',
+                    type: 'picture',
+                    path: '/assets/img/pathTracer002.jpg'
+                },
+                {
+                    name: 'Ray Tracing and GI',
+                    type: 'picture',
+                    path: '/assets/img/pathTracer003.jpg'
+                },
+                {
+                    name: 'Depth of Field',
+                    type: 'picture',
+                    path: '/assets/img/pathTracer004.jpg'
+                }, {
+                    name: 'Microfacet Matiral',
+                    type: 'picture',
+                    path: '/assets/img/pathTracer005.jpg'
+                },
+
+            ]
+        )
+
+        this.pathMap.set(
+            "rasterizerImg",
+            [
+                {
+                    name: 'Rasterizing triangle and coloring with Barycentric coordinates',
+                    type: 'picture',
+                    path: '/assets/img/rasterizer001.jpg'
+                },
+                {
+                    name: 'Transforms Matrix',
+                    type: 'picture',
+                    path: '/assets/img/rasterizer002.jpg'
+                },
+                {
+                    name: '"Pixel sampling:Bilinear Sampling"',
+                    type: 'picture',
+                    path: '/assets/img/rasterizer003.jpg'
+                },
+                {
+                    name: 'Level sampling: Nearst & Bilinear',
+                    type: 'picture',
+                    path: '/assets/img/rasterizer004.jpg'
+                },
+
+            ]
+        )
+
+        this.pathMap.set(
+            "rasterizerText", [
+            {
+                type: "name",
+                text: "Rasterizer"
+            },
+            {
+                type: "intro",
+                text: "A Rasterizer implemented with C++. can raster points, lines, and triangles with textures"
             },
             {
                 type: "type",

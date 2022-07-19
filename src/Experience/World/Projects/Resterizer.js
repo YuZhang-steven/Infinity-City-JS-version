@@ -9,7 +9,7 @@ export default class Resterizer {
     constructor() {
         //project information
         this.projectType = "computer_graphic"
-        this.projectName = "resterizer"
+        this.projectName = "rasterizer"
 
         //basic Information
         this.experience = new Experience()
