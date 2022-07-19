@@ -37,6 +37,12 @@ import '../../../static/projects/plasticScape/plasticScape003.jpg'
 import '../../../static/projects/plasticScape/plasticScape004.jpg'
 import '../../../static/projects/plasticScape/plasticScape005.jpg'
 
+import '../../../static/projects/clifPavilion/clifPavilion001.jpg'
+import '../../../static/projects/clifPavilion/clifPavilion002.jpg'
+import '../../../static/projects/clifPavilion/clifPavilion003.jpg'
+import '../../../static/projects/clifPavilion/clifPavilion004.jpg'
+import '../../../static/projects/clifPavilion/clifPavilion005.jpg'
+
 
 
 import '../../../static/others/photos1.jpg'
@@ -327,34 +333,51 @@ export default class ProjectPath {
         )
 
 
+        this.pathMap.set(
+            "clifPavilionImg",
+            [
+                {
+                    name: 'Final Prototype Support Reaction And Stress [kN]',
+                    type: 'picture',
+                    path: '/assets/img/clifPavilion001.jpg'
+                },
+                {
+                    name: 'Basic Design Strategy',
+                    type: 'picture',
+                    path: '/assets/img/clifPavilion002.jpg'
+                },
+                {
+                    name: 'Galapagos Optimization',
+                    type: 'picture',
+                    path: '/assets/img/clifPavilion003.jpg'
+                },
+                {
+                    name: 'Three Optizizations',
+                    type: 'picture',
+                    path: '/assets/img/clifPavilion004.jpg'
+                },
+                {
+                    name: 'Final Structure Analysis',
+                    type: 'picture',
+                    path: '/assets/img/clifPavilion005.jpg'
+                }
+            ]
+        )
 
         this.pathMap.set(
-            "about", [
+            "clifPavilionText", [
             {
-                type: "photo",
-                text: "photo1",
-                path: '/assets/img/photos1.jpg'
+                type: "name",
+                text: "Pavilion on the Clif"
             },
             {
-                name: 'anti_wechat',
-                type: 'icon',
-                path: '/assets/img/anti-wechat-50.png'
+                type: "intro",
+                text: "Teamed with Tya Abe and Sam Gebb, in this structure analysis project, We designed a cantilever pavilion on the cliff. We use Karamba3D to generate the structure performance and use it as the constraint to let Galapagos find the possible geometry solutions. "
             },
             {
-                name: 'instagram',
-                type: 'icon',
-                path: '/assets/img/instagram-50.png'
-            },
-            {
-                name: 'github',
-                type: 'icon',
-                path: '/assets/img/github-50.png'
-            },
-            {
-                name: 'linkedin',
-                type: 'icon',
-                path: '/assets/img/linkedin-50.png'
-            },
+                type: "type",
+                text: "Architecture"
+            }
         ]
         )
 
@@ -411,6 +434,35 @@ export default class ProjectPath {
         ]
         )
 
+        this.pathMap.set(
+            "about", [
+            {
+                type: "photo",
+                text: "photo1",
+                path: '/assets/img/photos1.jpg'
+            },
+            {
+                name: 'anti_wechat',
+                type: 'icon',
+                path: '/assets/img/anti-wechat-50.png'
+            },
+            {
+                name: 'instagram',
+                type: 'icon',
+                path: '/assets/img/instagram-50.png'
+            },
+            {
+                name: 'github',
+                type: 'icon',
+                path: '/assets/img/github-50.png'
+            },
+            {
+                name: 'linkedin',
+                type: 'icon',
+                path: '/assets/img/linkedin-50.png'
+            },
+        ]
+        )
 
 
 
