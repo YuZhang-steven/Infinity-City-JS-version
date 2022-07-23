@@ -30,7 +30,6 @@ export default class Project {
     #modalPage
 
     #objectsHover
-    #animationList
 
     //instance copy information
     #num_instances
@@ -43,7 +42,7 @@ export default class Project {
 
         this.#objectsHover = []
         this.materialList = []
-        this.#animationList = []
+        this.animationList = []
 
         //link to other objects
         this.#experience = new Experience()
@@ -66,7 +65,7 @@ export default class Project {
         this.setBasicInfo()
         this.#setMaterial()
         this.#setModel()
-        this.#setAnimation()
+        this.setAnimation()
 
         //setting direct link
         if (window.location.hash === this.projectName) {
@@ -111,17 +110,16 @@ export default class Project {
                 //calculate tranlation matrix
                 let matricesArray = this.#locCal.cal3Matrix(child.position)
 
-                console.log('2')
-                console.log(modelInstance)
+
                 //add matrix to each instance
                 for (let i = 0; i < this.#num_instances; i++) {
                     modelInstance.setMatrixAt(i, matricesArray[i])
                 }
 
-                //console.log(modelInstance)
                 //marked change and add the instance model to the array
                 modelInstance.instanceMatrix.needsUpdate = true;
-                this.instances.push(this.modelInstance)
+                this.instances.push(modelInstance)
+
 
                 //set event lisener to instance and model
                 this.#setEvent(modelInstance, this.material.color.getHex())
@@ -195,26 +193,29 @@ export default class Project {
     Setting animation, default is empty
     when the project have gltf animation, call loadAnimation()
     */
-    #setAnimation() {
+    setAnimation() {
 
     }
 
-    #loadAnimation() {
-        const animation = {}
+    loadAnimation() {
+
+
+        let animation = {}
         animation.mixer = new THREE.AnimationMixer(this.projectModel.scene)
         animation.action = animation.mixer.clipAction(this.projectModel.animations[0])
         animation.action.play()
+        this.animationList.push(animation)
 
-        this.#animationList.push(animation)
     }
 
     /*
     Update function for animation
     */
     update() {
-        for (anim in this.#animationList) {
-            anim.animation.mixer.update(this.#time.delta * 0.0004)
+        this.animationList.forEach((item) => {
+            item.mixer.update(this.#time.delta * 0.0004)
         }
+        )
 
     }
 
