@@ -5,11 +5,11 @@ import LocationCalculation from '../../Utils/LocationCalculation'
 
 
 
-export default class ClothSimulation {
+export default class ClifPavilion {
     constructor() {
         //project information
-        this.projectType = "computer_graphic"
-        this.projectName = "clothSimulation"
+        this.projectType = "architecture"
+        this.projectName = "clifPavilion"
 
         //basic Information
         this.experience = new Experience()
@@ -28,13 +28,13 @@ export default class ClothSimulation {
         this.center = new THREE.Vector3()
 
         //model file location
-        this.projectModel = this.resources.items.clothSimu
+        this.projectModel = this.resources.items.clifPavilion
 
         //setting model call
         this.setModel()
         this.setAnimation()
 
-        if (window.location.hash === '#clothSimulation') {
+        if (window.location.hash === '#clifPavilion') {
             this.directLink()
         }
     }
@@ -75,10 +75,24 @@ export default class ClothSimulation {
                 //marked change and add the instance model to the array
                 this.modelInstance.instanceMatrix.needsUpdate = true;
                 this.instances.push(this.modelInstance)
-                console.log('1')
-                console.log(this.modelInstance)
+
                 //add Event Listener to major model
                 this.interactionManager.add(child)
+                this.interactionManager.add(this.modelInstance)
+
+                this.modelInstance.addEventListener('mouseover', (event) => {
+
+                    if (!objectsHover.includes(event.target)) {
+                        material.color.set(0xffffff)
+                        objectsHover.push(event.target)
+                    }
+                })
+                this.modelInstance.addEventListener('mouseout', (event) => {
+                    if (objectsHover.includes(event.target)) {
+                        material.color.set(color_ori)
+                        objectsHover.pop()
+                    }
+                })
 
                 child.addEventListener('mouseover', (event) => {
 
@@ -114,7 +128,7 @@ export default class ClothSimulation {
         this.animation.action.play()
     }
     update() {
-        this.animation.mixer.update(this.time.delta * 0.0001)
+        this.animation.mixer.update(this.time.delta * 0.0004)
     }
     directLink() {
         this.modalPage.setModal(this.projectName)
