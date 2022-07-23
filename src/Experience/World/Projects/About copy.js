@@ -5,11 +5,11 @@ import LocationCalculation from '../../Utils/LocationCalculation'
 
 
 
-export default class ClothSimulation {
+export default class About {
     constructor() {
         //project information
-        this.projectType = "computer_graphic"
-        this.projectName = "clothSimulation"
+        this.projectType = "special"
+        this.projectName = "about"
 
         //basic Information
         this.experience = new Experience()
@@ -28,13 +28,12 @@ export default class ClothSimulation {
         this.center = new THREE.Vector3()
 
         //model file location
-        this.projectModel = this.resources.items.clothSimu
+        this.projectModel = this.resources.items.about
 
         //setting model call
         this.setModel()
-        this.setAnimation()
 
-        if (window.location.hash === '#clothSimulation') {
+        if (window.location.hash === '#about') {
             this.directLink()
         }
     }
@@ -55,6 +54,7 @@ export default class ClothSimulation {
 
         this.model.traverse((child) => {
             if (child instanceof THREE.Mesh) {
+
                 //add Material
                 child.material = material
 
@@ -94,7 +94,7 @@ export default class ClothSimulation {
                 })
                 child.addEventListener('mousedown', (event) => {
                     if (objectsHover.includes(event.target)) {
-                        this.modalPage.setModal(this.projectName)
+                        this.experience.aboutPage.setModal()
                     }
                 })
 
@@ -116,6 +116,6 @@ export default class ClothSimulation {
         this.animation.mixer.update(this.time.delta * 0.0001)
     }
     directLink() {
-        this.modalPage.setModal(this.projectName)
+        this.experience.aboutPage.setModal()
     }
 }

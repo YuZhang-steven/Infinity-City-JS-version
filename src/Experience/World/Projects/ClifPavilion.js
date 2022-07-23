@@ -6,4 +6,7 @@ export default class ClifPavilion extends Project {
         this.projectName = 'clifPavilion'
         this.projectModel = this.resources.items.clifPavilion
     }
+    setAnimation() {
+        this.loadAnimation()
+    }
 }

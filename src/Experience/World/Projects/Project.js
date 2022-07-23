@@ -10,29 +10,14 @@ always override method:
  setBasicInfo()
 
 Special Material override Methods:
- #setMaterial()
- #geoMatAdd(child)
+ setMaterial()
+ geoMatAdd(child)
 
  Animation Overrire Methods:
- #setAnimation()
- #loadAnimation()
+ setAnimation()
+ loadAnimation()
 */
 export default class Project {
-    //basic class information
-
-    //link to other objects
-    #experience
-    #scene
-    #locCal
-    #time
-    #interactionManager
-    #matAssign
-    #modalPage
-
-    #objectsHover
-
-    //instance copy information
-    #num_instances
 
     constructor() {
         //project information
@@ -40,36 +25,36 @@ export default class Project {
         this.projectName = ''
         this.projectModel = null
 
-        this.#objectsHover = []
+        this.objectsHover = []
         this.materialList = []
         this.animationList = []
 
         //link to other objects
-        this.#experience = new Experience()
-        this.#scene = this.#experience.scene
-        this.resources = this.#experience.resources
-        this.#locCal = new LocationCalculation()
-        this.#time = this.#experience.time
-        this.#interactionManager = this.#experience.interactive.instance
-        this.#matAssign = this.#experience.matAssign
-        this.#modalPage = this.#experience.modalPage
+        this.experience = new Experience()
+        this.scene = this.experience.scene
+        this.resources = this.experience.resources
+        this.locCal = new LocationCalculation()
+        this.time = this.experience.time
+        this.interactionManager = this.experience.interactive.instance
+        this.matAssign = this.experience.matAssign
+        this.modalPage = this.experience.modalPage
 
 
 
 
         //instance copy information
         this.instances = []
-        this.#num_instances = 3
+        this.num_instances = 3
 
         //setting model call
         this.setBasicInfo()
-        this.#setMaterial()
-        this.#setModel()
+        this.setMaterial()
+        this.setModel()
         this.setAnimation()
 
         //setting direct link
         if (window.location.hash === this.projectName) {
-            this.#directLink()
+            this.directLink()
         }
 
     }
@@ -87,7 +72,7 @@ export default class Project {
     /*
     Model setting function
     */
-    #setModel() {
+    setModel() {
         //extract geometry from model file
         const model = this.projectModel.scene
 
@@ -95,24 +80,24 @@ export default class Project {
         model.traverse((child) => {
             if (child instanceof THREE.Mesh) {
                 //add Material
-                child.material = this.#geoMatAdd(child)
+                child.material = this.geoMatAdd(child)
 
                 //create instance
                 let modelInstance = new THREE.InstancedMesh(
                     child.geometry,
                     child.material,
-                    this.#num_instances
+                    this.num_instances
                 )
 
                 //add instance to the scene
-                this.#scene.add(modelInstance)
+                this.scene.add(modelInstance)
 
                 //calculate tranlation matrix
-                let matricesArray = this.#locCal.cal3Matrix(child.position)
+                let matricesArray = this.locCal.cal3Matrix(child.position)
 
 
                 //add matrix to each instance
-                for (let i = 0; i < this.#num_instances; i++) {
+                for (let i = 0; i < this.num_instances; i++) {
                     modelInstance.setMatrixAt(i, matricesArray[i])
                 }
 
@@ -122,14 +107,14 @@ export default class Project {
 
 
                 //set event lisener to instance and model
-                this.#setEvent(modelInstance, this.material.color.getHex())
-                this.#setEvent(child, this.material.color.getHex())
+                this.setEvent(modelInstance, this.material.color.getHex())
+                this.setEvent(child, this.material.color.getHex())
             }
 
         })
 
         //add major model tohe scene
-        this.#scene.add(model)
+        this.scene.add(model)
     }
 
     /*
@@ -137,9 +122,9 @@ export default class Project {
 
      //neet to override with shader material
     */
-    #setMaterial() {
+    setMaterial() {
         //call material assignment function to get the right material and record the color information
-        this.material = this.#matAssign.getMaterial(this.projectType)
+        this.material = this.matAssign.getMaterial(this.projectType)
         this.materialList.push(this.material)
     }
 
@@ -150,7 +135,7 @@ export default class Project {
     //neet to override with more than two material
 
     */
-    #geoMatAdd(child) {
+    geoMatAdd(child) {
         return this.material
     }
 
@@ -158,33 +143,41 @@ export default class Project {
     /*
     add Event Listener to input child
     */
-    #setEvent(child, color_ori) {
+    setEvent(child, color_ori) {
         //add to eventManager
-        this.#interactionManager.add(child)
+        this.interactionManager.add(child)
 
         //mouse move color change
         child.addEventListener('mouseover', (event) => {
-            if (!this.#objectsHover.includes(event.target)) {
+            if (!this.objectsHover.includes(event.target)) {
                 for (let mat of this.materialList) {
-                    mat.color.set(this.#matAssign.basicColor)
+                    mat.color.set(this.matAssign.basicColor)
                 }
-                this.#objectsHover.push(event.target)
+                this.objectsHover.push(event.target)
             }
         })
 
         child.addEventListener('mouseout', (event) => {
-            if (this.#objectsHover.includes(event.target)) {
+            if (this.objectsHover.includes(event.target)) {
                 for (let mat of this.materialList) {
                     mat.color.set(color_ori)
                 }
-                this.#objectsHover.pop()
+                this.objectsHover.pop()
             }
         })
 
         //mouse click open the project page
+        this.addClickEvent(child)
+    }
+
+    /*
+   add Event Listener click show information
+   */
+    addClickEvent(child) {
+        //mouse click open the project page
         child.addEventListener('mousedown', (event) => {
-            if (this.#objectsHover.includes(event.target)) {
-                this.#modalPage.setModal(this.projectName)
+            if (this.objectsHover.includes(event.target)) {
+                this.modalPage.setModal(this.projectName)
             }
         })
     }
@@ -213,7 +206,7 @@ export default class Project {
     */
     update() {
         this.animationList.forEach((item) => {
-            item.mixer.update(this.#time.delta * 0.0004)
+            item.mixer.update(this.time.delta * 0.0004)
         }
         )
 
@@ -222,8 +215,8 @@ export default class Project {
     /*
     set project info Page
     */
-    #directLink() {
-        this.#modalPage.setModal(this.projectName)
+    directLink() {
+        this.modalPage.setModal(this.projectName)
     }
 
 
